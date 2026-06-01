@@ -1,0 +1,162 @@
+{
+  "system_id": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+  "canonical_system": "法术实体系统",
+  "english_id": "SpellEntitySystem",
+  "source_terms": [
+    "辉石魔法",
+    "卡利亚魔法",
+    "重力魔法",
+    "祷告",
+    "龙飨祷告",
+    "癫火祷告"
+  ],
+  "normalized_terms": [
+    "Glintstone Sorcery",
+    "Carian Sorcery",
+    "Gravity Magic",
+    "Incantation",
+    "Dragon Communion",
+    "Frenzied Flame"
+  ],
+  "core_objects": [
+    {
+      "object_id": "SpellEntitySystem_Object",
+      "description": "法术实体系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "SpellEntitySystem_State",
+      "description": "法术实体系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "SpellEntitySystem_RuleHook",
+      "description": "法术实体系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "法术实体记录需求、消耗、触媒、施放时间、目标、范围、效果",
+    "魔法与祷告按来源和触媒区分"
+  ],
+  "dependencies": [
+    "RulePriorityLogic",
+    "StatusLogic",
+    "DamageHealingLogic",
+    "RewardDropEntitySystem",
+    "MapLocationRuntimeSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "type": "system_logic",
+      "layer": "L3_CONTENT_ENTITY",
+      "name": "法术实体系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_SpellEntitySystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "辉石魔法",
+        "卡利亚魔法",
+        "重力魔法",
+        "祷告",
+        "龙飨祷告",
+        "癫火祷告"
+      ]
+    },
+    {
+      "id": "NORMALIZED_SpellEntitySystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Glintstone Sorcery",
+        "Carian Sorcery",
+        "Gravity Magic",
+        "Incantation",
+        "Dragon Communion",
+        "Frenzied Flame"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "法术实体记录需求、消耗、触媒、施放时间、目标、范围、效果",
+    "魔法与祷告按来源和触媒区分"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  }
+}

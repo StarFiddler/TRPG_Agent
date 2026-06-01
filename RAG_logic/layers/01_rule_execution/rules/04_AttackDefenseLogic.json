@@ -1,0 +1,94 @@
+{
+  "id": "AttackDefenseLogic",
+  "canonical_name": "攻击与防御系统",
+  "english_name": "Attack & Defense Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "处理武器、法术、祷告、战技、远程攻击、格挡、闪避、招架与掩体。",
+  "trigger_terms": [
+    "攻击",
+    "命中",
+    "防御",
+    "护甲",
+    "闪避",
+    "格挡",
+    "弹反",
+    "盾反",
+    "招架",
+    "掩体"
+  ],
+  "input_contract": {
+    "attacker": "攻击者",
+    "defender": "防御者",
+    "attack_form": [
+      "melee",
+      "ranged",
+      "sorcery",
+      "incantation",
+      "ash_of_war",
+      "environment"
+    ],
+    "defense_form": [
+      "evade",
+      "block",
+      "parry",
+      "armor_absorb",
+      "cover",
+      "counter"
+    ],
+    "range_band": [
+      "engaged",
+      "near",
+      "mid",
+      "far",
+      "extreme"
+    ],
+    "visibility": "clear / dim / blocked / hidden"
+  },
+  "execution_procedure": [
+    "确认攻击是否有合法目标、距离、视野、武器/媒介与资源。",
+    "攻击方执行 CheckLogic 或直接进入 Attack target。",
+    "防御方选择默认防御或消耗 reaction 执行主动防御。",
+    "若格挡成功，先扣 Stamina，再结算穿透伤害与架势压力。",
+    "若招架/盾反成功，可生成 critical_window。",
+    "命中后进入 DamageHealingLogic 与 StatusLogic。"
+  ],
+  "output_contract": {
+    "hit_result": [
+      "miss",
+      "graze",
+      "hit",
+      "guarded_hit",
+      "critical_window",
+      "parried"
+    ],
+    "defense_result": "闪避、格挡、招架、掩体吸收、护甲减免",
+    "next": [
+      "DamageHealingLogic",
+      "StatusLogic",
+      "ContestLogic"
+    ]
+  },
+  "elden_ring_adaptation": {
+    "elden_attack_types": [
+      "standard",
+      "slash",
+      "strike",
+      "pierce",
+      "magic",
+      "fire",
+      "lightning",
+      "holy"
+    ],
+    "poise": "大型敌人、重甲与 Boss 拥有 Poise/Stance；持续高冲击攻击可触发失衡。",
+    "critical": "背刺、处决、盾反成功、失衡后攻击可触发致命一击窗口。",
+    "range": "远程枪手/弓弩/法术使用距离与视线修正；超远距离需 CheckLogic 预判。"
+  },
+  "dependencies": [
+    "CheckLogic",
+    "ActionEconomyLogic",
+    "DamageHealingLogic",
+    "StatusLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

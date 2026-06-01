@@ -1,0 +1,1376 @@
+{
+  "nodes": [
+    "CheckLogic",
+    "ContestLogic",
+    "ActionEconomyLogic",
+    "AttackDefenseLogic",
+    "DamageHealingLogic",
+    "StatusLogic",
+    "ResourceLogic",
+    "RestRecoveryLogic",
+    "ExplorationTravelLogic",
+    "SocialInteractionLogic",
+    "AbilityExecutionLogic",
+    "RulePriorityLogic",
+    "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+    "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+    "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+    "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+    "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+    "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+    "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+    "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+    "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+    "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+    "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+    "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+    "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+    "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+    "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+    "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+    "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+    "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+    "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+    "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+    "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+    "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+    "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+    "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+    "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+    "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+    "L1_RULE_EXECUTION",
+    "SOURCE_REGISTRY"
+  ],
+  "edges": [
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "CheckLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "ContestLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "ActionEconomyLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "AttackDefenseLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "DamageHealingLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "StatusLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "ResourceLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "RestRecoveryLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "ExplorationTravelLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "SocialInteractionLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "AbilityExecutionLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "RulePriorityLogic",
+      "type": "contains"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_02_SpeciesLineageSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_03_ClassSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_04_SubclassSpecializationSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_05_BackgroundSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_06_LevelProgressionSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_07_SkillProficiencySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_08_FeatTalentTraitSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_09_EquipmentBuildSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_10_SpellAbilityListSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_11_TacticalRoleSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_12_CharacterSnapshotSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_01_AbilityEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_02_WeaponEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_03_ArmorDefenseEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_04_ItemConsumableEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_05_SpellEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_06_EnemyMonsterEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_07_NPCEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_08_EnvironmentEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_09_TrapMechanismEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_10_DiseaseToxinCurseEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_01_WorldviewRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_02_MapLocationRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_03_SceneRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_05_FactionRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_06_QuestRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_07_ClueInformationRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_08_ConflictRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_09_EncounterNodeRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_10_CampaignStateRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_12_GMRulingHomebrewRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ]
+}

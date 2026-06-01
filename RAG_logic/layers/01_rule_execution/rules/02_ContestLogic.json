@@ -1,0 +1,52 @@
+{
+  "id": "ContestLogic",
+  "canonical_name": "对抗系统",
+  "english_name": "Opposed Contest Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "处理双方或多方互相抵抗的行动，如潜行对察觉、抓取对挣脱、意志对诱导、破防对稳定。",
+  "trigger_terms": [
+    "对抗",
+    "抵抗",
+    "比拼",
+    "挣脱",
+    "压制",
+    "潜行vs察觉",
+    "欺骗vs洞察",
+    "破防"
+  ],
+  "input_contract": {
+    "active_actor": "主动方",
+    "reactive_actor": "反应方",
+    "active_pool": "主动方属性+技能+修正",
+    "reactive_pool": "反应方属性+技能+修正",
+    "contest_type": [
+      "body",
+      "mind",
+      "social",
+      "spirit",
+      "stance"
+    ]
+  },
+  "execution_procedure": [
+    "分别构建主动方与反应方 target。",
+    "双方各掷 d100，计算 success_level 与 margin。",
+    "优先比较成功等级，再比较 margin。",
+    "平局时比较当前优势：地形、先手、装备长度、Boss 权重或剧情锚点。",
+    "输出胜负、代价与持续态。"
+  ],
+  "output_contract": {
+    "winner": "active / reactive / tie_with_cost",
+    "loser_consequence": "位移、失衡、暴露、被控制、社交态度下降等",
+    "duration": "instant / round / scene"
+  },
+  "elden_ring_adaptation": {
+    "stance_contest": "重攻击、跳劈、战技、Boss 冲撞等可转为 stance contest。",
+    "stealth_contest": "潜行 vs 敌人感知；赐福安全区内默认不触发普通野怪察觉。",
+    "spirit_contest": "癫火、魅惑、恐惧、死诞者相关精神冲击可使用 MND/FAI/ARC 抵抗。"
+  },
+  "dependencies": [
+    "CheckLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

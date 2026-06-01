@@ -1,0 +1,91 @@
+{
+  "id": "ActionEconomyLogic",
+  "canonical_name": "行动经济系统",
+  "english_name": "Action Economy Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "定义回合内可用行动资源、行动互斥关系与战斗/探索节奏。",
+  "trigger_terms": [
+    "行动",
+    "动作",
+    "回合",
+    "轮次",
+    "移动",
+    "反应",
+    "主行动",
+    "副行动",
+    "战技动作"
+  ],
+  "input_contract": {
+    "scene_mode": [
+      "combat_round",
+      "exploration_turn",
+      "social_exchange",
+      "travel_watch"
+    ],
+    "actor_state": [
+      "stamina",
+      "encumbrance",
+      "status",
+      "initiative"
+    ],
+    "available_slots": [
+      "main_action",
+      "movement",
+      "reaction",
+      "free_interaction",
+      "minor_action_optional"
+    ]
+  },
+  "execution_procedure": [
+    "判断当前 scene_mode。",
+    "分配行动槽：1主行动、1移动、1反应、若干自由交互；轻量模式可合并 minor_action。",
+    "每次攻击、翻滚、冲刺、格挡、战技均检查 Stamina/FP。",
+    "同一回合内多段攻击或连续闪避按递增消耗处理。",
+    "若行动越权，转入 RulePriorityLogic 请求 GM 裁定。"
+  ],
+  "output_contract": {
+    "consumed_slots": "已消耗行动槽",
+    "remaining_slots": "剩余行动槽",
+    "resource_delta": "Stamina/FP/道具次数变化",
+    "interrupt_windows": "可被反应、打断、机会攻击影响的时间窗"
+  },
+  "elden_ring_adaptation": {
+    "soulslike_mapping": {
+      "main_action": [
+        "普通攻击",
+        "重攻击",
+        "施法",
+        "使用战技",
+        "使用道具",
+        "召唤/指挥骨灰"
+      ],
+      "movement": [
+        "接近",
+        "撤离",
+        "绕侧",
+        "翻滚",
+        "跳跃",
+        "骑乘移动"
+      ],
+      "reaction": [
+        "格挡",
+        "闪避反应",
+        "盾反/弹反尝试",
+        "保护队友"
+      ],
+      "free_interaction": [
+        "观察",
+        "简短呼喊",
+        "拾取显眼物",
+        "切换握持"
+      ]
+    },
+    "initiative": "普通遭遇按 DEX/负重/警戒决定；Boss 可拥有 scripted opener。"
+  },
+  "dependencies": [
+    "ResourceLogic",
+    "StatusLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

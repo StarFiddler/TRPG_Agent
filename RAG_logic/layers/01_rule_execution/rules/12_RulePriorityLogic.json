@@ -1,0 +1,58 @@
+{
+  "id": "RulePriorityLogic",
+  "canonical_name": "规则优先级与例外系统",
+  "english_name": "Rule Priority & Exception Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "当通用规则、原作设定、Wiki 数据、玩家约定、GM 裁定冲突时，确定优先级与例外写回。",
+  "trigger_terms": [
+    "优先级",
+    "例外",
+    "冲突",
+    "裁定",
+    "规则覆盖",
+    "原作设定",
+    "GM裁定",
+    "特例"
+  ],
+  "input_contract": {
+    "conflict": "冲突描述",
+    "rules_involved": "涉及规则",
+    "source_trace": "来源链",
+    "stakes": "影响范围：一次判定/一场景/长期规则"
+  },
+  "execution_procedure": [
+    "识别冲突类型：数据冲突、规则冲突、叙事冲突、运行冲突。",
+    "按 source_priority 排序。",
+    "执行 specific_over_general：具体原作条目 > 通用系统模板。",
+    "保留本项目硬约束：固定掉落核验、赐福/篝火安全区、地牢骨灰持续、d100 判定。",
+    "若仍无法解决，生成 GM 裁定并写入 exception_log。"
+  ],
+  "output_contract": {
+    "selected_rule": "最终采用规则",
+    "rejected_rules": "被覆盖规则及原因",
+    "exception_log": "例外记录",
+    "write_back_target": "写回到 world_base / campaign_state / RAG"
+  },
+  "elden_ring_adaptation": {
+    "priority_order": [
+      "官方游戏文本/游戏内事实",
+      "已交叉验证 Wiki 条目",
+      "TRPG_Agent 项目硬约束",
+      "当前战役已发生事实",
+      "通用规则执行层模板",
+      "GM 临场裁定"
+    ],
+    "no_fabrication": "道具地点、NPC 任务、Boss 掉落、关键能力不得为了运行顺滑而虚构。",
+    "exception_format": {
+      "id": "EXC-YYYYMMDD-###",
+      "reason": "...",
+      "scope": "single_scene/campaign/global",
+      "review": "pending/locked"
+    }
+  },
+  "dependencies": [
+    "all"
+  ],
+  "priority": "highest",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

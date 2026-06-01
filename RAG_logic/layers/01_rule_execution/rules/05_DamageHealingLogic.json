@@ -1,0 +1,62 @@
+{
+  "id": "DamageHealingLogic",
+  "canonical_name": "伤害与治疗系统",
+  "english_name": "Damage & Healing Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "统一处理 HP 变化、伤害类型、抗性、减免、易伤、治疗、濒死、死亡与复活。",
+  "trigger_terms": [
+    "伤害",
+    "治疗",
+    "恢复",
+    "扣血",
+    "回血",
+    "死亡",
+    "复活",
+    "抗性",
+    "易伤",
+    "减伤",
+    "护盾"
+  ],
+  "input_contract": {
+    "source": "伤害/治疗来源",
+    "target": "目标",
+    "damage_packet": {
+      "base": "基础值",
+      "type": "伤害类型",
+      "scaling": "属性/武器/法术倍率",
+      "poise_damage": "架势伤害"
+    },
+    "defense_packet": {
+      "absorption": "吸收率",
+      "resistance": "抗性",
+      "shield": "护盾/格挡残余"
+    },
+    "healing_packet": "治疗来源与上限"
+  },
+  "execution_procedure": [
+    "确定伤害包或治疗包。",
+    "按顺序结算：免疫 → 护盾/格挡 → 抗性/吸收 → 易伤/暴击 → HP 变化。",
+    "同时结算 poise_damage 与 status_buildup。",
+    "HP <= 0 触发 defeated/death 流程；褪色者按复活规则回到最近篝火/赐福。",
+    "治疗不能超过 HP 上限；特殊治疗可能解除状态或恢复 FP/Stamina。"
+  ],
+  "output_contract": {
+    "hp_delta": "HP 变化",
+    "resource_delta": "FP/Stamina/Flask/Rune 变化",
+    "status_buildup": "异常累积",
+    "death_state": "alive / downed / dead / respawn_pending",
+    "loot_or_rune_state": "卢恩掉落、可回收、永久丢失等"
+  },
+  "elden_ring_adaptation": {
+    "death_rule": "褪色者死亡后在最近已触碰赐福/篝火复活；卢恩可按原作逻辑留在死亡地点，二次死亡前未回收则丢失。",
+    "flask_healing": "红露滴圣杯瓶治疗 HP，蓝露滴圣杯瓶恢复 FP；次数在赐福/篝火刷新。",
+    "poise_break": "架势归零或超过阈值时生成 critical_window。"
+  },
+  "dependencies": [
+    "AttackDefenseLogic",
+    "ResourceLogic",
+    "RestRecoveryLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

@@ -1,0 +1,181 @@
+{
+  "system_id": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+  "canonical_system": "遭遇实体系统",
+  "english_id": "EncounterEntitySystem",
+  "source_terms": [
+    "巡逻队",
+    "野外Boss",
+    "地牢Boss",
+    "伏击",
+    "NPC入侵",
+    "龙遭遇",
+    "夜间遭遇"
+  ],
+  "normalized_terms": [
+    "Patrol",
+    "Field Boss",
+    "Dungeon Boss",
+    "Ambush",
+    "NPC Invasion",
+    "Dragon Encounter",
+    "Night Encounter"
+  ],
+  "core_objects": [
+    {
+      "object_id": "EncounterEntitySystem_Object",
+      "description": "遭遇实体系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "EncounterEntitySystem_State",
+      "description": "遭遇实体系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "EncounterEntitySystem_RuleHook",
+      "description": "遭遇实体系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "遭遇实体记录触发位置、难度、敌人组、地形、撤退条件、奖励与后续状态",
+    "夜晚与天气可改变遭遇表"
+  ],
+  "dependencies": [
+    "RulePriorityLogic",
+    "StatusLogic",
+    "DamageHealingLogic",
+    "RewardDropEntitySystem",
+    "MapLocationRuntimeSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "type": "system_logic",
+      "layer": "L3_CONTENT_ENTITY",
+      "name": "遭遇实体系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_EncounterEntitySystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "巡逻队",
+        "野外Boss",
+        "地牢Boss",
+        "伏击",
+        "NPC入侵",
+        "龙遭遇"
+      ]
+    },
+    {
+      "id": "NORMALIZED_EncounterEntitySystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Patrol",
+        "Field Boss",
+        "Dungeon Boss",
+        "Ambush",
+        "NPC Invasion",
+        "Dragon Encounter"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_11_EncounterEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "遭遇实体记录触发位置、难度、敌人组、地形、撤退条件、奖励与后续状态",
+    "夜晚与天气可改变遭遇表"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  },
+  "encounter_seed_table": [
+    {
+      "region": "宁姆格福",
+      "encounter": "葛瑞克士兵巡逻 / 野兽 / 小型洞窟Boss",
+      "tone": "低阶教学与侦查"
+    },
+    {
+      "region": "盖利德",
+      "encounter": "腐败污染生物 / 高压野外Boss",
+      "tone": "异常状态与区域压迫"
+    },
+    {
+      "region": "幽影地",
+      "encounter": "米凯拉追随者冲突 / 幽影树相关敌人",
+      "tone": "DLC高压多派系冲突"
+    }
+  ]
+}

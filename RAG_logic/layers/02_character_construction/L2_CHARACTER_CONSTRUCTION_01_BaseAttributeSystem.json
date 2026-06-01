@@ -1,0 +1,247 @@
+{
+  "system_id": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+  "canonical_system": "基础属性系统",
+  "english_id": "BaseAttributeSystem",
+  "source_terms": [
+    "生命力",
+    "集中力",
+    "耐力",
+    "力气",
+    "灵巧",
+    "智力",
+    "信仰",
+    "感应"
+  ],
+  "normalized_terms": [
+    "Vigor",
+    "Mind",
+    "Endurance",
+    "Strength",
+    "Dexterity",
+    "Intelligence",
+    "Faith",
+    "Arcane"
+  ],
+  "core_objects": [
+    {
+      "object_id": "BaseAttributeSystem_Object",
+      "description": "基础属性系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "BaseAttributeSystem_State",
+      "description": "基础属性系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "BaseAttributeSystem_RuleHook",
+      "description": "基础属性系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "属性影响HP/FP/精力/负重/武器需求/法术与异常构筑",
+    "TRPG中属性提供判定修正、资源上限与能力门槛"
+  ],
+  "dependencies": [
+    "CheckLogic",
+    "ResourceLogic",
+    "EquipmentBuildSystem",
+    "SpellAbilityListSystem",
+    "CharacterSnapshotSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "type": "system_logic",
+      "layer": "L2_CHARACTER_CONSTRUCTION",
+      "name": "基础属性系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_BaseAttributeSystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "生命力",
+        "集中力",
+        "耐力",
+        "力气",
+        "灵巧",
+        "智力"
+      ]
+    },
+    {
+      "id": "NORMALIZED_BaseAttributeSystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Vigor",
+        "Mind",
+        "Endurance",
+        "Strength",
+        "Dexterity",
+        "Intelligence"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "CheckLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "ResourceLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "EquipmentBuildSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "SpellAbilityListSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "CharacterSnapshotSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION_01_BaseAttributeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "属性影响HP/FP/精力/负重/武器需求/法术与异常构筑",
+    "TRPG中属性提供判定修正、资源上限与能力门槛"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  },
+  "sample_template": {
+    "template_id": "Tarnished_Base_TRPG_Template",
+    "identity": "褪色者",
+    "attributes": {
+      "Vigor": {
+        "normalized": "生命/体魄",
+        "affects": [
+          "HP",
+          "濒死抵抗"
+        ]
+      },
+      "Mind": {
+        "normalized": "精神/专注",
+        "affects": [
+          "FP",
+          "法术/战技持续使用"
+        ]
+      },
+      "Endurance": {
+        "normalized": "耐力/体能",
+        "affects": [
+          "Stamina",
+          "负重",
+          "长途跋涉"
+        ]
+      },
+      "Strength": {
+        "normalized": "力量",
+        "affects": [
+          "重武器需求",
+          "破防",
+          "体力对抗"
+        ]
+      },
+      "Dexterity": {
+        "normalized": "灵巧",
+        "affects": [
+          "轻武器",
+          "潜行",
+          "先攻",
+          "远程"
+        ]
+      },
+      "Intelligence": {
+        "normalized": "智力",
+        "affects": [
+          "辉石魔法",
+          "学识检定"
+        ]
+      },
+      "Faith": {
+        "normalized": "信仰",
+        "affects": [
+          "祷告",
+          "黄金律法/癫火/龙飨类能力"
+        ]
+      },
+      "Arcane": {
+        "normalized": "感应/神秘",
+        "affects": [
+          "异常积累",
+          "发现",
+          "秘术"
+        ]
+      }
+    },
+    "resources": [
+      "HP",
+      "FP",
+      "Stamina",
+      "Runes",
+      "Flask Charges"
+    ],
+    "start_state": {
+      "current_grace": "待设定",
+      "runes_held": 0,
+      "death_marker": null,
+      "npc_flags": {},
+      "party_bonds": {}
+    }
+  }
+}

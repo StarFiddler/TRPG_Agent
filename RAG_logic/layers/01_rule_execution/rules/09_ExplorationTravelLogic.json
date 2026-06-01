@@ -1,0 +1,81 @@
+{
+  "id": "ExplorationTravelLogic",
+  "canonical_name": "探索与旅行系统",
+  "english_name": "Exploration & Travel Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "处理大地图移动、地牢探索、方向、距离、时间、隐蔽、搜索、资源消耗与固定奖励发现。",
+  "trigger_terms": [
+    "探索",
+    "旅行",
+    "移动",
+    "地图",
+    "地牢",
+    "洞窟",
+    "搜索",
+    "赶路",
+    "路线",
+    "赐福图"
+  ],
+  "input_contract": {
+    "origin": "起点节点",
+    "destination": "目标节点",
+    "route_type": [
+      "overworld",
+      "legacy_dungeon",
+      "minor_dungeon",
+      "underground",
+      "shadow_realm"
+    ],
+    "travel_mode": [
+      "walk",
+      "torrent",
+      "stealth",
+      "forced_march",
+      "fast_travel"
+    ],
+    "party_order": "队伍行进顺序",
+    "search_targets": [
+      "地点",
+      "道具",
+      "NPC",
+      "敌人",
+      "机关",
+      "赐福"
+    ]
+  },
+  "execution_procedure": [
+    "将地点映射到地图节点与最近赐福/篝火。",
+    "根据路线类型、距离、地形、时间段和敌人密度确定风险。",
+    "执行导航、侦查、潜行或遭遇判定。",
+    "进入地牢时建立局部房间/通道/敌人/奖励结构。",
+    "固定奖励必须按道具名-所在地核验后写入。"
+  ],
+  "output_contract": {
+    "route_result": "抵达/绕行/遭遇/迷路/发现",
+    "time_elapsed": "时间推进",
+    "resource_delta": "耐力、消耗品、圣杯瓶等变化",
+    "discovered_nodes": "发现的地点/赐福/支路",
+    "verified_rewards": "已核验奖励列表"
+  },
+  "elden_ring_adaptation": {
+    "world_scale": {
+      "lands_between_radius_km": 1000,
+      "distance_model": "硬尺度，节点距离可按 MAP 系统生成"
+    },
+    "worlds": [
+      "交界地",
+      "幽影地"
+    ],
+    "key_nodes": "赐福/篝火、重要入口、区域连接点。",
+    "non_key_nodes": "洞窟、墓地、坑道、封印监牢、临时据点等挂载到最近 key node。",
+    "party_default_order": "小暗前锋，花月居中并负责召唤/支援，诺艾尔殿后远程观察。"
+  },
+  "dependencies": [
+    "CheckLogic",
+    "ContestLogic",
+    "RestRecoveryLogic",
+    "ResourceLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

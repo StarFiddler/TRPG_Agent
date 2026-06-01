@@ -1,0 +1,69 @@
+{
+  "id": "SocialInteractionLogic",
+  "canonical_name": "社交互动系统",
+  "english_name": "Social Interaction Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "处理 NPC 交互、阵营态度、任务线、交易、威慑、说服、欺瞒与关系变动。",
+  "trigger_terms": [
+    "社交",
+    "对话",
+    "说服",
+    "威慑",
+    "欺骗",
+    "洞察",
+    "NPC",
+    "派系",
+    "关系",
+    "任务"
+  ],
+  "input_contract": {
+    "speaker": "发起者",
+    "target_npc": "目标 NPC",
+    "intent": [
+      "ask",
+      "persuade",
+      "intimidate",
+      "deceive",
+      "trade",
+      "ally",
+      "threaten",
+      "quest_progress"
+    ],
+    "known_context": "已知情报、阵营立场、过往行为",
+    "stakes": "社交后果"
+  },
+  "execution_procedure": [
+    "确认 NPC 原作设定、阵营、当前任务阶段。",
+    "判断互动是否触及核心设定锚点；不可让 NPC OOC。",
+    "普通互动可直接反馈；有风险或高收益时进入 CheckLogic 或 ContestLogic。",
+    "根据成功等级调整态度、信息、交易权限、任务阶段。",
+    "任务奖励与关键道具必须等待内容实体层核验。"
+  ],
+  "output_contract": {
+    "npc_response": "NPC 反应",
+    "relationship_delta": "友好/中立/敌对/信任/恐惧等变化",
+    "quest_state_delta": "任务推进",
+    "unlocked_info_or_service": "解锁信息、交易、路线或召唤"
+  },
+  "elden_ring_adaptation": {
+    "elden_npc_policy": "NPC 名称、身份、剧情关系与死亡/敌对条件必须核验；无法确认时只输出待确认分支。",
+    "faction_axes": [
+      "黄金律法",
+      "卡利亚/满月",
+      "火山官邸",
+      "鲜血王朝",
+      "癫火",
+      "死眠/死诞",
+      "米凯拉追随者",
+      "本地势力"
+    ],
+    "merchant_policy": "商人物品、价格与固定库存不得杜撰，未知时标记 pending_verification。"
+  },
+  "dependencies": [
+    "CheckLogic",
+    "ContestLogic",
+    "RulePriorityLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

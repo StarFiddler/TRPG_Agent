@@ -1,0 +1,162 @@
+{
+  "system_id": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+  "canonical_system": "NPC 与关系网络系统",
+  "english_id": "NPCRelationshipRuntimeSystem",
+  "source_terms": [
+    "圆桌厅堂",
+    "梅琳娜盟约",
+    "菈妮线",
+    "火山官邸",
+    "米凯拉追随者",
+    "商人网络"
+  ],
+  "normalized_terms": [
+    "Roundtable Hold",
+    "Melina Pact",
+    "Ranni Questline",
+    "Volcano Manor",
+    "Miquella Followers",
+    "Merchant Network"
+  ],
+  "core_objects": [
+    {
+      "object_id": "NPCRelationshipRuntimeSystem_Object",
+      "description": "NPC 与关系网络系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "NPCRelationshipRuntimeSystem_State",
+      "description": "NPC 与关系网络系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "NPCRelationshipRuntimeSystem_RuleHook",
+      "description": "NPC 与关系网络系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "关系网络记录信任、敌意、任务阶段、阵营冲突与可用情报",
+    "NPC死亡或背叛必须写入战役状态"
+  ],
+  "dependencies": [
+    "CampaignStateRuntimeSystem",
+    "MapLocationRuntimeSystem",
+    "NPCEntitySystem",
+    "EncounterEntitySystem",
+    "GMRulingHomebrewRuntimeSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "type": "system_logic",
+      "layer": "L4_NARRATIVE_RUNTIME",
+      "name": "NPC 与关系网络系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_NPCRelationshipRuntimeSystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "圆桌厅堂",
+        "梅琳娜盟约",
+        "菈妮线",
+        "火山官邸",
+        "米凯拉追随者",
+        "商人网络"
+      ]
+    },
+    {
+      "id": "NORMALIZED_NPCRelationshipRuntimeSystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Roundtable Hold",
+        "Melina Pact",
+        "Ranni Questline",
+        "Volcano Manor",
+        "Miquella Followers",
+        "Merchant Network"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_04_NPCRelationshipRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "关系网络记录信任、敌意、任务阶段、阵营冲突与可用情报",
+    "NPC死亡或背叛必须写入战役状态"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  }
+}

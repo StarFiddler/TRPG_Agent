@@ -1,0 +1,182 @@
+{
+  "system_id": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+  "canonical_system": "奖励与掉落系统",
+  "english_id": "RewardDropEntitySystem",
+  "source_terms": [
+    "固定掉落",
+    "宝箱",
+    "尸体拾取",
+    "Boss追忆",
+    "商人购买",
+    "任务奖励",
+    "制作配方"
+  ],
+  "normalized_terms": [
+    "Fixed Drop",
+    "Chest",
+    "Corpse Pickup",
+    "Boss Remembrance",
+    "Merchant Purchase",
+    "Quest Reward",
+    "Crafting Recipe"
+  ],
+  "core_objects": [
+    {
+      "object_id": "RewardDropEntitySystem_Object",
+      "description": "奖励与掉落系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "RewardDropEntitySystem_State",
+      "description": "奖励与掉落系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "RewardDropEntitySystem_RuleHook",
+      "description": "奖励与掉落系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "奖励实体必须记录获取方式、地点、前置条件与来源链接",
+    "项目硬约束：战利品/掉落遵循原作固定获取规则并回查 wiki"
+  ],
+  "dependencies": [
+    "RulePriorityLogic",
+    "StatusLogic",
+    "DamageHealingLogic",
+    "RewardDropEntitySystem",
+    "MapLocationRuntimeSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "type": "system_logic",
+      "layer": "L3_CONTENT_ENTITY",
+      "name": "奖励与掉落系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_RewardDropEntitySystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "固定掉落",
+        "宝箱",
+        "尸体拾取",
+        "Boss追忆",
+        "商人购买",
+        "任务奖励"
+      ]
+    },
+    {
+      "id": "NORMALIZED_RewardDropEntitySystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Fixed Drop",
+        "Chest",
+        "Corpse Pickup",
+        "Boss Remembrance",
+        "Merchant Purchase",
+        "Quest Reward"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "RulePriorityLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "StatusLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "DamageHealingLogic",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "RewardDropEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY_12_RewardDropEntitySystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "奖励实体必须记录获取方式、地点、前置条件与来源链接",
+    "项目硬约束：战利品/掉落遵循原作固定获取规则并回查 wiki"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  },
+  "reward_drop_policy": {
+    "hard_rule": "战利品/掉落遵循原作固定获取规则；必须使用道具名 + 所在地/来源进行 wiki 核验。",
+    "award_modes": [
+      "fixed_pickup",
+      "chest",
+      "corpse",
+      "boss_remembrance",
+      "merchant",
+      "quest_reward",
+      "enemy_drop_verified"
+    ],
+    "forbidden": [
+      "凭空掉落稀有装备",
+      "把随机掉落伪装为固定掉落",
+      "未查来源直接授予具体物品"
+    ],
+    "fallback": "若无法核验，奖励抽象为卢恩、情报、临时资源或待核验物品占位。"
+  }
+}

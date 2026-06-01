@@ -1,0 +1,66 @@
+{
+  "id": "StatusLogic",
+  "canonical_name": "状态系统",
+  "english_name": "Status & Condition Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "定义增益、减益、异常、控制、持续效果、叠加、解除与回合推进。",
+  "trigger_terms": [
+    "状态",
+    "异常",
+    "中毒",
+    "腐败",
+    "流血",
+    "冻伤",
+    "睡眠",
+    "发狂",
+    "死疫",
+    "buff",
+    "debuff"
+  ],
+  "input_contract": {
+    "status_id": "状态标识",
+    "source": "来源",
+    "target": "目标",
+    "buildup": "累积值",
+    "threshold": "触发阈值",
+    "duration": "持续时间",
+    "stacking": "叠加/刷新/互斥规则"
+  },
+  "execution_procedure": [
+    "识别状态类型：buildup、instant、aura、stance、narrative。",
+    "若为 buildup，累积至 threshold 后触发状态效果。",
+    "应用状态效果并记录 duration 与 dispel_condition。",
+    "每轮/每场景推进持续时间并执行 tick。",
+    "解除时回滚临时修正，保留剧情后果。"
+  ],
+  "output_contract": {
+    "applied_statuses": "新增或更新状态",
+    "ticks": "持续伤害/治疗/行动限制",
+    "dispel_options": "解除方式",
+    "next_rule_hint": "DamageHealingLogic / ResourceLogic / RulePriorityLogic"
+  },
+  "elden_ring_adaptation": {
+    "canonical_status_effects": {
+      "poison": "持续毒伤",
+      "scarlet_rot": "高压持续腐败伤害",
+      "hemorrhage": "流血爆发伤害",
+      "frostbite": "冻伤爆发并附带易伤/耐力压制",
+      "sleep": "睡眠或大幅行动受限",
+      "madness": "发狂，影响 HP/FP 与精神行动",
+      "death_blight": "死疫，满值后直接死亡/即死化处理"
+    },
+    "buff_examples": [
+      "黄金树赐福类增益",
+      "武器附魔",
+      "护符被动",
+      "料理/药剂临时强化"
+    ],
+    "boss_exception": "Boss 可拥有异常抗性、阶段清除或剧情免疫，须在 RulePriorityLogic 中声明。"
+  },
+  "dependencies": [
+    "DamageHealingLogic",
+    "ResourceLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}

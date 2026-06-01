@@ -1,0 +1,162 @@
+{
+  "system_id": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+  "canonical_system": "时间推进系统",
+  "english_id": "TimeProgressionRuntimeSystem",
+  "source_terms": [
+    "昼夜",
+    "守夜",
+    "旅行耗时",
+    "休息刷新",
+    "事件倒计时",
+    "Boss阶段变化"
+  ],
+  "normalized_terms": [
+    "Day-Night",
+    "Watch",
+    "Travel Time",
+    "Rest Refresh",
+    "Event Countdown",
+    "Boss Phase"
+  ],
+  "core_objects": [
+    {
+      "object_id": "TimeProgressionRuntimeSystem_Object",
+      "description": "时间推进系统中的主要可检索/可执行对象"
+    },
+    {
+      "object_id": "TimeProgressionRuntimeSystem_State",
+      "description": "时间推进系统在战役运行中的状态字段"
+    },
+    {
+      "object_id": "TimeProgressionRuntimeSystem_RuleHook",
+      "description": "时间推进系统连接规则执行层时使用的触发钩子"
+    }
+  ],
+  "attributes": {
+    "source_policy": "保留 Elden Ring 原术语，并建立 normalized_term；具体数值与地点需回查 wiki。",
+    "abstraction_level": "middle",
+    "data_completeness": "world_base skeleton + representative anchors, not exhaustive database",
+    "required_fields": [
+      "id",
+      "name",
+      "source_term",
+      "normalized_term",
+      "scope",
+      "dependencies",
+      "runtime_notes",
+      "source_trace"
+    ]
+  },
+  "constraints": [
+    "保留原作术语，同时生成 normalized_term 以便 GraphRAG 检索。",
+    "具体数值、掉落、位置、NPC任务分支不得杜撰；运行时必须按条目回查 wiki。",
+    "赐福/篝火视为安全区与恢复节点；敌人默认远离安全区，除非剧情或高智能敌人明确突破。",
+    "死亡后可复活；卢恩掉落与二次死亡丢失逻辑按原作精神抽象。",
+    "地牢内允许骨灰召唤作为本项目桌规，但需记录为 homebrew_override。",
+    "交界地与幽影地按多世界/多图层处理。",
+    "时间推进影响巡逻、商人、夜间Boss、恢复、资源与NPC位置",
+    "野外长休需要守夜逻辑"
+  ],
+  "dependencies": [
+    "CampaignStateRuntimeSystem",
+    "MapLocationRuntimeSystem",
+    "NPCEntitySystem",
+    "EncounterEntitySystem",
+    "GMRulingHomebrewRuntimeSystem"
+  ],
+  "state_changes": [
+    "读入 wiki/设定资料 → 提取 source_term",
+    "source_term → normalized_term",
+    "normalized_term → GraphRAG canonical node",
+    "运行中事件 → 写回 CampaignState / CharacterSnapshot / EntityState"
+  ],
+  "graph_nodes": [
+    {
+      "id": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "type": "system_logic",
+      "layer": "L4_NARRATIVE_RUNTIME",
+      "name": "时间推进系统"
+    },
+    {
+      "id": "SOURCE_EldenRing_TimeProgressionRuntimeSystem",
+      "type": "source_anchor",
+      "source_terms": [
+        "昼夜",
+        "守夜",
+        "旅行耗时",
+        "休息刷新",
+        "事件倒计时",
+        "Boss阶段变化"
+      ]
+    },
+    {
+      "id": "NORMALIZED_TimeProgressionRuntimeSystem",
+      "type": "normalized_anchor",
+      "normalized_terms": [
+        "Day-Night",
+        "Watch",
+        "Travel Time",
+        "Rest Refresh",
+        "Event Countdown",
+        "Boss Phase"
+      ]
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "CampaignStateRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "MapLocationRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "NPCEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "EncounterEntitySystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "GMRulingHomebrewRuntimeSystem",
+      "type": "depends_on"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "L1_RULE_EXECUTION",
+      "type": "runtime_executes_by"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME_11_TimeProgressionRuntimeSystem",
+      "to": "SOURCE_REGISTRY",
+      "type": "requires_verification"
+    }
+  ],
+  "execution_notes": [
+    "时间推进影响巡逻、商人、夜间Boss、恢复、资源与NPC位置",
+    "野外长休需要守夜逻辑"
+  ],
+  "elden_ring_mapping": {
+    "faithfulness": "保留原作语义，不强行套用DND术语；TRPG需要判定时再调用01规则执行层。",
+    "verification_required_for": [
+      "道具获取",
+      "Boss掉落",
+      "NPC任务分支",
+      "地图连接",
+      "具体数值",
+      "商人库存"
+    ],
+    "homebrew_overrides": [
+      "地牢内允许全程召唤骨灰",
+      "赐福/篝火统一安全区",
+      "交界地半径1000km用于旅行尺度"
+    ]
+  }
+}

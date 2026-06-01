@@ -1,0 +1,66 @@
+{
+  "id": "ResourceLogic",
+  "canonical_name": "资源消耗系统",
+  "english_name": "Resource Consumption Logic",
+  "layer": "01_规则执行层 / Rule Execution Layer",
+  "purpose": "统一管理 HP、FP、Stamina、卢恩、圣杯瓶、材料、骨灰召唤次数、架势等资源。",
+  "trigger_terms": [
+    "资源",
+    "消耗",
+    "FP",
+    "蓝条",
+    "耐力",
+    "精力",
+    "卢恩",
+    "圣杯瓶",
+    "材料",
+    "骨灰",
+    "架势"
+  ],
+  "input_contract": {
+    "resource_id": "资源名",
+    "owner": "角色/队伍/场景",
+    "operation": [
+      "spend",
+      "recover",
+      "lock",
+      "increase_max",
+      "decrease_max",
+      "convert"
+    ],
+    "amount": "变化量",
+    "refresh_policy": "刷新规则"
+  },
+  "execution_procedure": [
+    "检查资源是否存在与是否被锁定。",
+    "按行动、技能、道具、状态消耗资源。",
+    "不足时判定失败、降级执行或进入代价执行。",
+    "记录资源变化并触发依赖规则。",
+    "在赐福/篝火、休息或剧情节点执行刷新。"
+  ],
+  "output_contract": {
+    "resource_delta": "资源变化",
+    "insufficient_resource_branch": "资源不足分支",
+    "refresh_event": "是否触发刷新",
+    "audit_log": "用于复盘的资源变化日志"
+  },
+  "elden_ring_adaptation": {
+    "resources": {
+      "HP": "生命",
+      "FP": "专注/法术/祷告/战技资源",
+      "Stamina": "攻击、闪避、格挡、冲刺等动作资源",
+      "Runes": "经验/货币/死亡风险资源",
+      "FlaskCharges": "红蓝圣杯瓶次数",
+      "CraftingMaterials": "制作材料",
+      "SpiritSummonSlot": "骨灰召唤组",
+      "Poise/Stance": "失衡与致命窗口资源"
+    },
+    "grace_refresh": "赐福/篝火恢复 HP、FP、圣杯瓶与多数状态，并刷新大多数敌人；固定奖励不刷新。",
+    "spirit_ash_policy": "地牢内骨灰可持续随行，但仍受 FP、召唤槽与死亡限制。"
+  },
+  "dependencies": [
+    "RestRecoveryLogic"
+  ],
+  "priority": "standard",
+  "verification_policy": "涉及原作固定地点、NPC、道具、Boss、敌人、奖励时，必须按 source_priority 逐级核验；无法核验则输出 pending_verification。"
+}
