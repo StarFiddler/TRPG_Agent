@@ -1,0 +1,902 @@
+[
+  {
+    "from": "01_01_CheckLogic",
+    "relation": "DEPENDS_ON",
+    "to": "基础属性系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_01_CheckLogic",
+    "relation": "DEPENDS_ON",
+    "to": "技能与熟练系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_01_CheckLogic",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_01_CheckLogic",
+    "relation": "DEPENDS_ON",
+    "to": "规则优先级与例外系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_02_ContestLogic",
+    "relation": "DEPENDS_ON",
+    "to": "基础判定系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_02_ContestLogic",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_02_ContestLogic",
+    "relation": "DEPENDS_ON",
+    "to": "敌对单位与怪物系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_02_ContestLogic",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_与关系网络系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_03_ActionEconomyLogic",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_03_ActionEconomyLogic",
+    "relation": "DEPENDS_ON",
+    "to": "攻击与防御系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_03_ActionEconomyLogic",
+    "relation": "DEPENDS_ON",
+    "to": "魔法_技能与特殊能力执行系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_04_AttackDefenseLogic",
+    "relation": "DEPENDS_ON",
+    "to": "伤害与治疗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_04_AttackDefenseLogic",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_04_AttackDefenseLogic",
+    "relation": "DEPENDS_ON",
+    "to": "武器实体系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_04_AttackDefenseLogic",
+    "relation": "DEPENDS_ON",
+    "to": "护具与防御装备系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_05_DamageHealingLogic",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_05_DamageHealingLogic",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_05_DamageHealingLogic",
+    "relation": "DEPENDS_ON",
+    "to": "休息与恢复系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_06_StatusLogic",
+    "relation": "DEPENDS_ON",
+    "to": "伤害与治疗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_06_StatusLogic",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_06_StatusLogic",
+    "relation": "DEPENDS_ON",
+    "to": "疾病_毒素与诅咒系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_07_ResourceLogic",
+    "relation": "DEPENDS_ON",
+    "to": "行动经济系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_07_ResourceLogic",
+    "relation": "DEPENDS_ON",
+    "to": "等级成长系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_07_ResourceLogic",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_07_ResourceLogic",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_08_RestRecoveryLogic",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_08_RestRecoveryLogic",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_08_RestRecoveryLogic",
+    "relation": "DEPENDS_ON",
+    "to": "时间推进系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_09_ExplorationTravelLogic",
+    "relation": "DEPENDS_ON",
+    "to": "地图与地点系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_09_ExplorationTravelLogic",
+    "relation": "DEPENDS_ON",
+    "to": "环境实体系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_09_ExplorationTravelLogic",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇节点系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_10_SocialInteractionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_实体系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_10_SocialInteractionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_与关系网络系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_10_SocialInteractionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_10_SocialInteractionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_11_AbilityExecutionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "法术与能力列表系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_11_AbilityExecutionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "能力实体系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_11_AbilityExecutionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_11_AbilityExecutionLogic",
+    "relation": "DEPENDS_ON",
+    "to": "规则优先级与例外系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_12_RulePriorityLogic",
+    "relation": "DEPENDS_ON",
+    "to": "GM裁定与自制规则系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_12_RulePriorityLogic",
+    "relation": "DEPENDS_ON",
+    "to": "线索与信息系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "01_12_RulePriorityLogic",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "01_规则执行层"
+  },
+  {
+    "from": "02_01_AttributeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "基础判定系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_01_AttributeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_01_AttributeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "等级成长系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_02_SpeciesLineageSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_02_SpeciesLineageSystem",
+    "relation": "DEPENDS_ON",
+    "to": "职业系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_02_SpeciesLineageSystem",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_03_ClassSystem",
+    "relation": "DEPENDS_ON",
+    "to": "基础属性系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_03_ClassSystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_03_ClassSystem",
+    "relation": "DEPENDS_ON",
+    "to": "背景系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_04_SubclassSpecializationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "法术与能力列表系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_04_SubclassSpecializationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_04_SubclassSpecializationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_05_BackgroundSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_05_BackgroundSystem",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_与关系网络系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_05_BackgroundSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_06_LevelGrowthSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_06_LevelGrowthSystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_06_LevelGrowthSystem",
+    "relation": "DEPENDS_ON",
+    "to": "休息与恢复系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_07_SkillProficiencySystem",
+    "relation": "DEPENDS_ON",
+    "to": "基础判定系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_07_SkillProficiencySystem",
+    "relation": "DEPENDS_ON",
+    "to": "职业系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_07_SkillProficiencySystem",
+    "relation": "DEPENDS_ON",
+    "to": "背景系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_08_FeatTraitSystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_08_FeatTraitSystem",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_08_FeatTraitSystem",
+    "relation": "DEPENDS_ON",
+    "to": "规则优先级与例外系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_09_EquipmentBuildSystem",
+    "relation": "DEPENDS_ON",
+    "to": "武器实体系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_09_EquipmentBuildSystem",
+    "relation": "DEPENDS_ON",
+    "to": "护具与防御装备系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_09_EquipmentBuildSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_10_SpellAbilityListSystem",
+    "relation": "DEPENDS_ON",
+    "to": "能力实体系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_10_SpellAbilityListSystem",
+    "relation": "DEPENDS_ON",
+    "to": "法术实体系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_10_SpellAbilityListSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_11_TacticalRoleSystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_11_TacticalRoleSystem",
+    "relation": "DEPENDS_ON",
+    "to": "法术与能力列表系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_11_TacticalRoleSystem",
+    "relation": "DEPENDS_ON",
+    "to": "角色状态快照系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_12_CharacterSnapshotSystem",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_12_CharacterSnapshotSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "02_12_CharacterSnapshotSystem",
+    "relation": "DEPENDS_ON",
+    "to": "休息与恢复系统",
+    "layer": "02_角色构建层"
+  },
+  {
+    "from": "03_01_AbilityEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "魔法_技能与特殊能力执行系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_01_AbilityEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "法术与能力列表系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_02_WeaponEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "攻击与防御系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_02_WeaponEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_02_WeaponEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_03_ArmorDefenseEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "攻击与防御系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_03_ArmorDefenseEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_03_ArmorDefenseEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_04_ItemConsumableEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_04_ItemConsumableEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "探索与旅行系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_04_ItemConsumableEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_05_SpellEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "能力实体系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_05_SpellEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "法术与能力列表系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_05_SpellEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_06_EnemyMonsterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇实体系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_06_EnemyMonsterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_06_EnemyMonsterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "攻击与防御系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_07_NPCEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "社交互动系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_07_NPCEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_与关系网络系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_07_NPCEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_08_EnvironmentEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "探索与旅行系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_08_EnvironmentEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "地图与地点系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_08_EnvironmentEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "休息与恢复系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_09_TrapMechanismSystem",
+    "relation": "DEPENDS_ON",
+    "to": "基础判定系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_09_TrapMechanismSystem",
+    "relation": "DEPENDS_ON",
+    "to": "环境实体系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_09_TrapMechanismSystem",
+    "relation": "DEPENDS_ON",
+    "to": "道具与消耗品系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_10_DiseaseToxinCurseSystem",
+    "relation": "DEPENDS_ON",
+    "to": "状态系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_10_DiseaseToxinCurseSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_10_DiseaseToxinCurseSystem",
+    "relation": "DEPENDS_ON",
+    "to": "GM裁定与自制规则系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_11_EncounterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "敌对单位与怪物系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_11_EncounterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "环境实体系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_11_EncounterEntitySystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_12_RewardLootSystem",
+    "relation": "DEPENDS_ON",
+    "to": "资源消耗系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_12_RewardLootSystem",
+    "relation": "DEPENDS_ON",
+    "to": "装备构建系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_12_RewardLootSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "03_12_RewardLootSystem",
+    "relation": "DEPENDS_ON",
+    "to": "规则优先级与例外系统",
+    "layer": "03_内容实体层"
+  },
+  {
+    "from": "04_01_WorldviewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_01_WorldviewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "地图与地点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_01_WorldviewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "GM裁定与自制规则系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_02_MapLocationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "探索与旅行系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_02_MapLocationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "环境实体系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_02_MapLocationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇节点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_03_SceneSystem",
+    "relation": "DEPENDS_ON",
+    "to": "地图与地点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_03_SceneSystem",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇节点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_03_SceneSystem",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_04_NPCRelationshipNetworkSystem",
+    "relation": "DEPENDS_ON",
+    "to": "NPC_实体系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_04_NPCRelationshipNetworkSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_04_NPCRelationshipNetworkSystem",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_05_FactionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_05_FactionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "NPC关系网络系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_05_FactionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "冲突系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_06_QuestSystem",
+    "relation": "DEPENDS_ON",
+    "to": "NPC关系网络系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_06_QuestSystem",
+    "relation": "DEPENDS_ON",
+    "to": "线索与信息系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_06_QuestSystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_07_ClueInformationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_07_ClueInformationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "GM裁定与自制规则系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_07_ClueInformationSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_08_ConflictSystem",
+    "relation": "DEPENDS_ON",
+    "to": "派系系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_08_ConflictSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_08_ConflictSystem",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_09_EncounterNodeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "地图与地点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_09_EncounterNodeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇实体系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_09_EncounterNodeSystem",
+    "relation": "DEPENDS_ON",
+    "to": "奖励与掉落系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_10_CampaignStateSystem",
+    "relation": "DEPENDS_ON",
+    "to": "角色状态快照系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_10_CampaignStateSystem",
+    "relation": "DEPENDS_ON",
+    "to": "任务系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_10_CampaignStateSystem",
+    "relation": "DEPENDS_ON",
+    "to": "时间推进系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_11_TimeProgressionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "休息与恢复系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_11_TimeProgressionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "战役状态系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_11_TimeProgressionSystem",
+    "relation": "DEPENDS_ON",
+    "to": "遭遇节点系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_12_GMAdjudicationHomebrewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "规则优先级与例外系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_12_GMAdjudicationHomebrewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "线索与信息系统",
+    "layer": "04_叙事运行层"
+  },
+  {
+    "from": "04_12_GMAdjudicationHomebrewSystem",
+    "relation": "DEPENDS_ON",
+    "to": "世界观系统",
+    "layer": "04_叙事运行层"
+  }
+]

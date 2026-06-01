@@ -1,0 +1,351 @@
+{
+  "repository": "StarFiddler/TRPG_Agent",
+  "branch": "master",
+  "input_parameter": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+  "skill_count": 48,
+  "loaded_skill_files": [
+    "Skills/01_规则执行层/01_Skill_CheckLogic_基础判定系统生成_Skill.md",
+    "Skills/01_规则执行层/02_Skill_ContestLogic_对抗系统生成_Skill.md",
+    "Skills/01_规则执行层/03_Skill_ActionEconomyLogic_行动经济系统生成_Skill.md",
+    "Skills/01_规则执行层/04_Skill_AttackDefenseLogic_攻击与防御系统生成_Skill.md",
+    "Skills/01_规则执行层/05_Skill_DamageHealingLogic_伤害与治疗系统生成_Skill.md",
+    "Skills/01_规则执行层/06_Skill_StatusLogic_状态系统生成_Skill.md",
+    "Skills/01_规则执行层/07_Skill_ResourceLogic_资源消耗系统生成_Skill.md",
+    "Skills/01_规则执行层/08_Skill_RestRecoveryLogic_休息与恢复系统生成_Skill.md",
+    "Skills/01_规则执行层/09_Skill_ExplorationTravelLogic_探索与旅行系统生成_Skill.md",
+    "Skills/01_规则执行层/10_Skill_SocialInteractionLogic_社交互动系统生成_Skill.md",
+    "Skills/01_规则执行层/11_Skill_AbilityExecutionLogic_魔法、技能与特殊能力执行系统生成_Skill.md",
+    "Skills/01_规则执行层/12_Skill_RulePriorityLogic_规则优先级与例外系统生成_Skill.md",
+    "Skills/02_角色构建层/Skill_01_基础属性系统.md",
+    "Skills/02_角色构建层/Skill_02_种族、血统或物种系统.md",
+    "Skills/02_角色构建层/Skill_03_职业系统.md",
+    "Skills/02_角色构建层/Skill_04_子职业、专精或流派系统.md",
+    "Skills/02_角色构建层/Skill_05_背景系统.md",
+    "Skills/02_角色构建层/Skill_06_等级成长系统.md",
+    "Skills/02_角色构建层/Skill_07_技能与熟练系统.md",
+    "Skills/02_角色构建层/Skill_08_专长、天赋与特性系统.md",
+    "Skills/02_角色构建层/Skill_09_装备构建系统.md",
+    "Skills/02_角色构建层/Skill_10_法术与能力列表系统.md",
+    "Skills/02_角色构建层/Skill_11_角色定位与战术角色系统.md",
+    "Skills/02_角色构建层/Skill_12_角色状态快照系统.md",
+    "Skills/03_内容实体层/Skill_01_能力实体系统.md",
+    "Skills/03_内容实体层/Skill_02_武器实体系统.md",
+    "Skills/03_内容实体层/Skill_03_护具与防御装备系统.md",
+    "Skills/03_内容实体层/Skill_04_道具与消耗品系统.md",
+    "Skills/03_内容实体层/Skill_05_法术实体系统.md",
+    "Skills/03_内容实体层/Skill_06_敌对单位与怪物系统.md",
+    "Skills/03_内容实体层/Skill_07_NPC 实体系统.md",
+    "Skills/03_内容实体层/Skill_08_环境实体系统.md",
+    "Skills/03_内容实体层/Skill_09_陷阱与机关系统.md",
+    "Skills/03_内容实体层/Skill_10_疾病、毒素与诅咒系统.md",
+    "Skills/03_内容实体层/Skill_11_遭遇实体系统.md",
+    "Skills/03_内容实体层/Skill_12_奖励与掉落系统.md",
+    "Skills/04_叙事运行层/Skill_01_世界观系统.md",
+    "Skills/04_叙事运行层/Skill_02_地图与地点系统.md",
+    "Skills/04_叙事运行层/Skill_03_场景系统.md",
+    "Skills/04_叙事运行层/Skill_04_NPC 与关系网络系统.md",
+    "Skills/04_叙事运行层/Skill_05_派系系统.md",
+    "Skills/04_叙事运行层/Skill_06_任务系统.md",
+    "Skills/04_叙事运行层/Skill_07_线索与信息系统.md",
+    "Skills/04_叙事运行层/Skill_08_冲突系统.md",
+    "Skills/04_叙事运行层/Skill_09_遭遇节点系统.md",
+    "Skills/04_叙事运行层/Skill_10_战役状态系统.md",
+    "Skills/04_叙事运行层/Skill_11_时间推进系统.md",
+    "Skills/04_叙事运行层/Skill_12_GM裁定与自制规则系统.md"
+  ],
+  "generated_outputs": [
+    {
+      "skill_file": "Skills/01_规则执行层/01_Skill_CheckLogic_基础判定系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/01_CheckLogic_基础判定系统.yaml",
+      "json": "systems/01_规则执行层/01_CheckLogic_基础判定系统.json",
+      "canonical_system": "基础判定系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/02_Skill_ContestLogic_对抗系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/02_ContestLogic_对抗系统.yaml",
+      "json": "systems/01_规则执行层/02_ContestLogic_对抗系统.json",
+      "canonical_system": "对抗系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/03_Skill_ActionEconomyLogic_行动经济系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/03_ActionEconomyLogic_行动经济系统.yaml",
+      "json": "systems/01_规则执行层/03_ActionEconomyLogic_行动经济系统.json",
+      "canonical_system": "行动经济系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/04_Skill_AttackDefenseLogic_攻击与防御系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/04_AttackDefenseLogic_攻击与防御系统.yaml",
+      "json": "systems/01_规则执行层/04_AttackDefenseLogic_攻击与防御系统.json",
+      "canonical_system": "攻击与防御系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/05_Skill_DamageHealingLogic_伤害与治疗系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/05_DamageHealingLogic_伤害与治疗系统.yaml",
+      "json": "systems/01_规则执行层/05_DamageHealingLogic_伤害与治疗系统.json",
+      "canonical_system": "伤害与治疗系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/06_Skill_StatusLogic_状态系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/06_StatusLogic_状态系统.yaml",
+      "json": "systems/01_规则执行层/06_StatusLogic_状态系统.json",
+      "canonical_system": "状态系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/07_Skill_ResourceLogic_资源消耗系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/07_ResourceLogic_资源消耗系统.yaml",
+      "json": "systems/01_规则执行层/07_ResourceLogic_资源消耗系统.json",
+      "canonical_system": "资源消耗系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/08_Skill_RestRecoveryLogic_休息与恢复系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/08_RestRecoveryLogic_休息与恢复系统.yaml",
+      "json": "systems/01_规则执行层/08_RestRecoveryLogic_休息与恢复系统.json",
+      "canonical_system": "休息与恢复系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/09_Skill_ExplorationTravelLogic_探索与旅行系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/09_ExplorationTravelLogic_探索与旅行系统.yaml",
+      "json": "systems/01_规则执行层/09_ExplorationTravelLogic_探索与旅行系统.json",
+      "canonical_system": "探索与旅行系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/10_Skill_SocialInteractionLogic_社交互动系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/10_SocialInteractionLogic_社交互动系统.yaml",
+      "json": "systems/01_规则执行层/10_SocialInteractionLogic_社交互动系统.json",
+      "canonical_system": "社交互动系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/11_Skill_AbilityExecutionLogic_魔法、技能与特殊能力执行系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/11_AbilityExecutionLogic_魔法、技能与特殊能力执行系统.yaml",
+      "json": "systems/01_规则执行层/11_AbilityExecutionLogic_魔法、技能与特殊能力执行系统.json",
+      "canonical_system": "魔法、技能与特殊能力执行系统"
+    },
+    {
+      "skill_file": "Skills/01_规则执行层/12_Skill_RulePriorityLogic_规则优先级与例外系统生成_Skill.md",
+      "yaml": "systems/01_规则执行层/12_RulePriorityLogic_规则优先级与例外系统.yaml",
+      "json": "systems/01_规则执行层/12_RulePriorityLogic_规则优先级与例外系统.json",
+      "canonical_system": "规则优先级与例外系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_01_基础属性系统.md",
+      "yaml": "systems/02_角色构建层/01_AttributeSystem_基础属性系统.yaml",
+      "json": "systems/02_角色构建层/01_AttributeSystem_基础属性系统.json",
+      "canonical_system": "基础属性系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_02_种族、血统或物种系统.md",
+      "yaml": "systems/02_角色构建层/02_SpeciesLineageSystem_种族、血统或物种系统.yaml",
+      "json": "systems/02_角色构建层/02_SpeciesLineageSystem_种族、血统或物种系统.json",
+      "canonical_system": "种族、血统或物种系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_03_职业系统.md",
+      "yaml": "systems/02_角色构建层/03_ClassSystem_职业系统.yaml",
+      "json": "systems/02_角色构建层/03_ClassSystem_职业系统.json",
+      "canonical_system": "职业系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_04_子职业、专精或流派系统.md",
+      "yaml": "systems/02_角色构建层/04_SubclassSpecializationSystem_子职业、专精或流派系统.yaml",
+      "json": "systems/02_角色构建层/04_SubclassSpecializationSystem_子职业、专精或流派系统.json",
+      "canonical_system": "子职业、专精或流派系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_05_背景系统.md",
+      "yaml": "systems/02_角色构建层/05_BackgroundSystem_背景系统.yaml",
+      "json": "systems/02_角色构建层/05_BackgroundSystem_背景系统.json",
+      "canonical_system": "背景系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_06_等级成长系统.md",
+      "yaml": "systems/02_角色构建层/06_LevelGrowthSystem_等级成长系统.yaml",
+      "json": "systems/02_角色构建层/06_LevelGrowthSystem_等级成长系统.json",
+      "canonical_system": "等级成长系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_07_技能与熟练系统.md",
+      "yaml": "systems/02_角色构建层/07_SkillProficiencySystem_技能与熟练系统.yaml",
+      "json": "systems/02_角色构建层/07_SkillProficiencySystem_技能与熟练系统.json",
+      "canonical_system": "技能与熟练系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_08_专长、天赋与特性系统.md",
+      "yaml": "systems/02_角色构建层/08_FeatTraitSystem_专长、天赋与特性系统.yaml",
+      "json": "systems/02_角色构建层/08_FeatTraitSystem_专长、天赋与特性系统.json",
+      "canonical_system": "专长、天赋与特性系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_09_装备构建系统.md",
+      "yaml": "systems/02_角色构建层/09_EquipmentBuildSystem_装备构建系统.yaml",
+      "json": "systems/02_角色构建层/09_EquipmentBuildSystem_装备构建系统.json",
+      "canonical_system": "装备构建系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_10_法术与能力列表系统.md",
+      "yaml": "systems/02_角色构建层/10_SpellAbilityListSystem_法术与能力列表系统.yaml",
+      "json": "systems/02_角色构建层/10_SpellAbilityListSystem_法术与能力列表系统.json",
+      "canonical_system": "法术与能力列表系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_11_角色定位与战术角色系统.md",
+      "yaml": "systems/02_角色构建层/11_TacticalRoleSystem_角色定位与战术角色系统.yaml",
+      "json": "systems/02_角色构建层/11_TacticalRoleSystem_角色定位与战术角色系统.json",
+      "canonical_system": "角色定位与战术角色系统"
+    },
+    {
+      "skill_file": "Skills/02_角色构建层/Skill_12_角色状态快照系统.md",
+      "yaml": "systems/02_角色构建层/12_CharacterSnapshotSystem_角色状态快照系统.yaml",
+      "json": "systems/02_角色构建层/12_CharacterSnapshotSystem_角色状态快照系统.json",
+      "canonical_system": "角色状态快照系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_01_能力实体系统.md",
+      "yaml": "systems/03_内容实体层/01_AbilityEntitySystem_能力实体系统.yaml",
+      "json": "systems/03_内容实体层/01_AbilityEntitySystem_能力实体系统.json",
+      "canonical_system": "能力实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_02_武器实体系统.md",
+      "yaml": "systems/03_内容实体层/02_WeaponEntitySystem_武器实体系统.yaml",
+      "json": "systems/03_内容实体层/02_WeaponEntitySystem_武器实体系统.json",
+      "canonical_system": "武器实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_03_护具与防御装备系统.md",
+      "yaml": "systems/03_内容实体层/03_ArmorDefenseEntitySystem_护具与防御装备系统.yaml",
+      "json": "systems/03_内容实体层/03_ArmorDefenseEntitySystem_护具与防御装备系统.json",
+      "canonical_system": "护具与防御装备系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_04_道具与消耗品系统.md",
+      "yaml": "systems/03_内容实体层/04_ItemConsumableEntitySystem_道具与消耗品系统.yaml",
+      "json": "systems/03_内容实体层/04_ItemConsumableEntitySystem_道具与消耗品系统.json",
+      "canonical_system": "道具与消耗品系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_05_法术实体系统.md",
+      "yaml": "systems/03_内容实体层/05_SpellEntitySystem_法术实体系统.yaml",
+      "json": "systems/03_内容实体层/05_SpellEntitySystem_法术实体系统.json",
+      "canonical_system": "法术实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_06_敌对单位与怪物系统.md",
+      "yaml": "systems/03_内容实体层/06_EnemyMonsterEntitySystem_敌对单位与怪物系统.yaml",
+      "json": "systems/03_内容实体层/06_EnemyMonsterEntitySystem_敌对单位与怪物系统.json",
+      "canonical_system": "敌对单位与怪物系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_07_NPC 实体系统.md",
+      "yaml": "systems/03_内容实体层/07_NPCEntitySystem_NPC 实体系统.yaml",
+      "json": "systems/03_内容实体层/07_NPCEntitySystem_NPC 实体系统.json",
+      "canonical_system": "NPC 实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_08_环境实体系统.md",
+      "yaml": "systems/03_内容实体层/08_EnvironmentEntitySystem_环境实体系统.yaml",
+      "json": "systems/03_内容实体层/08_EnvironmentEntitySystem_环境实体系统.json",
+      "canonical_system": "环境实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_09_陷阱与机关系统.md",
+      "yaml": "systems/03_内容实体层/09_TrapMechanismSystem_陷阱与机关系统.yaml",
+      "json": "systems/03_内容实体层/09_TrapMechanismSystem_陷阱与机关系统.json",
+      "canonical_system": "陷阱与机关系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_10_疾病、毒素与诅咒系统.md",
+      "yaml": "systems/03_内容实体层/10_DiseaseToxinCurseSystem_疾病、毒素与诅咒系统.yaml",
+      "json": "systems/03_内容实体层/10_DiseaseToxinCurseSystem_疾病、毒素与诅咒系统.json",
+      "canonical_system": "疾病、毒素与诅咒系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_11_遭遇实体系统.md",
+      "yaml": "systems/03_内容实体层/11_EncounterEntitySystem_遭遇实体系统.yaml",
+      "json": "systems/03_内容实体层/11_EncounterEntitySystem_遭遇实体系统.json",
+      "canonical_system": "遭遇实体系统"
+    },
+    {
+      "skill_file": "Skills/03_内容实体层/Skill_12_奖励与掉落系统.md",
+      "yaml": "systems/03_内容实体层/12_RewardLootSystem_奖励与掉落系统.yaml",
+      "json": "systems/03_内容实体层/12_RewardLootSystem_奖励与掉落系统.json",
+      "canonical_system": "奖励与掉落系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_01_世界观系统.md",
+      "yaml": "systems/04_叙事运行层/01_WorldviewSystem_世界观系统.yaml",
+      "json": "systems/04_叙事运行层/01_WorldviewSystem_世界观系统.json",
+      "canonical_system": "世界观系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_02_地图与地点系统.md",
+      "yaml": "systems/04_叙事运行层/02_MapLocationSystem_地图与地点系统.yaml",
+      "json": "systems/04_叙事运行层/02_MapLocationSystem_地图与地点系统.json",
+      "canonical_system": "地图与地点系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_03_场景系统.md",
+      "yaml": "systems/04_叙事运行层/03_SceneSystem_场景系统.yaml",
+      "json": "systems/04_叙事运行层/03_SceneSystem_场景系统.json",
+      "canonical_system": "场景系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_04_NPC 与关系网络系统.md",
+      "yaml": "systems/04_叙事运行层/04_NPCRelationshipNetworkSystem_NPC 与关系网络系统.yaml",
+      "json": "systems/04_叙事运行层/04_NPCRelationshipNetworkSystem_NPC 与关系网络系统.json",
+      "canonical_system": "NPC 与关系网络系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_05_派系系统.md",
+      "yaml": "systems/04_叙事运行层/05_FactionSystem_派系系统.yaml",
+      "json": "systems/04_叙事运行层/05_FactionSystem_派系系统.json",
+      "canonical_system": "派系系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_06_任务系统.md",
+      "yaml": "systems/04_叙事运行层/06_QuestSystem_任务系统.yaml",
+      "json": "systems/04_叙事运行层/06_QuestSystem_任务系统.json",
+      "canonical_system": "任务系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_07_线索与信息系统.md",
+      "yaml": "systems/04_叙事运行层/07_ClueInformationSystem_线索与信息系统.yaml",
+      "json": "systems/04_叙事运行层/07_ClueInformationSystem_线索与信息系统.json",
+      "canonical_system": "线索与信息系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_08_冲突系统.md",
+      "yaml": "systems/04_叙事运行层/08_ConflictSystem_冲突系统.yaml",
+      "json": "systems/04_叙事运行层/08_ConflictSystem_冲突系统.json",
+      "canonical_system": "冲突系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_09_遭遇节点系统.md",
+      "yaml": "systems/04_叙事运行层/09_EncounterNodeSystem_遭遇节点系统.yaml",
+      "json": "systems/04_叙事运行层/09_EncounterNodeSystem_遭遇节点系统.json",
+      "canonical_system": "遭遇节点系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_10_战役状态系统.md",
+      "yaml": "systems/04_叙事运行层/10_CampaignStateSystem_战役状态系统.yaml",
+      "json": "systems/04_叙事运行层/10_CampaignStateSystem_战役状态系统.json",
+      "canonical_system": "战役状态系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_11_时间推进系统.md",
+      "yaml": "systems/04_叙事运行层/11_TimeProgressionSystem_时间推进系统.yaml",
+      "json": "systems/04_叙事运行层/11_TimeProgressionSystem_时间推进系统.json",
+      "canonical_system": "时间推进系统"
+    },
+    {
+      "skill_file": "Skills/04_叙事运行层/Skill_12_GM裁定与自制规则系统.md",
+      "yaml": "systems/04_叙事运行层/12_GMAdjudicationHomebrewSystem_GM裁定与自制规则系统.yaml",
+      "json": "systems/04_叙事运行层/12_GMAdjudicationHomebrewSystem_GM裁定与自制规则系统.json",
+      "canonical_system": "GM裁定与自制规则系统"
+    }
+  ],
+  "notes": [
+    "Skills/01-04 四个文件夹下的 48 个 Skill 文件均已按目录清单执行生成对应 logic 文件。",
+    "本输出是 TRPG world_base 与 GraphRAG logic 底座，不是对所有 Wiki 页面逐条镜像。",
+    "凡涉及固定地点、固定掉落、NPC任务分支与DLC条目，后续运行时应按 input_sources 中的 Wiki 入口逐项核对。"
+  ]
+}

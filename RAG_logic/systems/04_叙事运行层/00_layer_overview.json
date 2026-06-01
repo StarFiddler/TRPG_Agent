@@ -1,0 +1,68 @@
+{
+  "layer": "04_叙事运行层",
+  "source_work": "Elden Ring / 艾尔登法环",
+  "system_count": 12,
+  "routing_policy": "按输入术语先定位层级，再定位 canonical_system；保留 aliasTrace 与 source_terms。",
+  "systems": [
+    {
+      "skill_id": "WorldviewSystem",
+      "canonical_system": "世界观系统",
+      "file": "systems/04_叙事运行层/01_WorldviewSystem_世界观系统.yaml"
+    },
+    {
+      "skill_id": "MapLocationSystem",
+      "canonical_system": "地图与地点系统",
+      "file": "systems/04_叙事运行层/02_MapLocationSystem_地图与地点系统.yaml"
+    },
+    {
+      "skill_id": "SceneSystem",
+      "canonical_system": "场景系统",
+      "file": "systems/04_叙事运行层/03_SceneSystem_场景系统.yaml"
+    },
+    {
+      "skill_id": "NPCRelationshipNetworkSystem",
+      "canonical_system": "NPC 与关系网络系统",
+      "file": "systems/04_叙事运行层/04_NPCRelationshipNetworkSystem_NPC 与关系网络系统.yaml"
+    },
+    {
+      "skill_id": "FactionSystem",
+      "canonical_system": "派系系统",
+      "file": "systems/04_叙事运行层/05_FactionSystem_派系系统.yaml"
+    },
+    {
+      "skill_id": "QuestSystem",
+      "canonical_system": "任务系统",
+      "file": "systems/04_叙事运行层/06_QuestSystem_任务系统.yaml"
+    },
+    {
+      "skill_id": "ClueInformationSystem",
+      "canonical_system": "线索与信息系统",
+      "file": "systems/04_叙事运行层/07_ClueInformationSystem_线索与信息系统.yaml"
+    },
+    {
+      "skill_id": "ConflictSystem",
+      "canonical_system": "冲突系统",
+      "file": "systems/04_叙事运行层/08_ConflictSystem_冲突系统.yaml"
+    },
+    {
+      "skill_id": "EncounterNodeSystem",
+      "canonical_system": "遭遇节点系统",
+      "file": "systems/04_叙事运行层/09_EncounterNodeSystem_遭遇节点系统.yaml"
+    },
+    {
+      "skill_id": "CampaignStateSystem",
+      "canonical_system": "战役状态系统",
+      "file": "systems/04_叙事运行层/10_CampaignStateSystem_战役状态系统.yaml"
+    },
+    {
+      "skill_id": "TimeProgressionSystem",
+      "canonical_system": "时间推进系统",
+      "file": "systems/04_叙事运行层/11_TimeProgressionSystem_时间推进系统.yaml"
+    },
+    {
+      "skill_id": "GMAdjudicationHomebrewSystem",
+      "canonical_system": "GM裁定与自制规则系统",
+      "file": "systems/04_叙事运行层/12_GMAdjudicationHomebrewSystem_GM裁定与自制规则系统.yaml"
+    }
+  ]
+}

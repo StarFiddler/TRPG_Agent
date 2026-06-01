@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "03_内容实体层",
+    "skill_id": "EnvironmentEntitySystem",
+    "skill_no": "08",
+    "canonical_system": "环境实体系统",
+    "repository_skill_file": "Skills/03_内容实体层/Skill_08_环境实体系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "环境实体系统",
+    "source_terms": [
+      {
+        "term": "赐福",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "玛莉卡楔石",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "雾门",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "升降机",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "灵魂气流",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "毒沼",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "腐败沼泽",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "地下河",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "风暴",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "环境实体",
+        "mapped_to": "环境实体系统",
+        "reason": "影响移动、恢复、判定、视野、资源或遭遇的场景对象"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "environment_id",
+        "object_name": "environment_id",
+        "object_type": "logic_object",
+        "source_term": "environment_id",
+        "normalized_term": "环境实体系统"
+      },
+      {
+        "object_id": "hazard",
+        "object_name": "hazard",
+        "object_type": "logic_object",
+        "source_term": "hazard",
+        "normalized_term": "环境实体系统"
+      },
+      {
+        "object_id": "safe_point",
+        "object_name": "safe_point",
+        "object_type": "logic_object",
+        "source_term": "safe_point",
+        "normalized_term": "环境实体系统"
+      },
+      {
+        "object_id": "travel_node",
+        "object_name": "travel_node",
+        "object_type": "logic_object",
+        "source_term": "travel_node",
+        "normalized_term": "环境实体系统"
+      },
+      {
+        "object_id": "visibility",
+        "object_name": "visibility",
+        "object_type": "logic_object",
+        "source_term": "visibility",
+        "normalized_term": "环境实体系统"
+      },
+      {
+        "object_id": "interaction",
+        "object_name": "interaction",
+        "object_type": "logic_object",
+        "source_term": "interaction",
+        "normalized_term": "环境实体系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "safe_points",
+        "value": "Site of Grace, Roundtable Hold",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "hazards",
+        "value": "poison, rot, fall, lava, siege, darkness",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "interactives",
+        "value": "lift, seal, spirit spring, hidden wall, fog gate",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "安全点不应生成普通敌人，除非高阶剧情例外",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      },
+      {
+        "condition": "场景实体可覆盖通用探索规则",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "探索与旅行系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "地图与地点系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "休息与恢复系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 环境实体系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "03_08_EnvironmentEntitySystem",
+        "node_type": "System",
+        "label": "环境实体系统"
+      },
+      {
+        "node_id": "SRC_EnvironmentEntitySystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "03_08_EnvironmentEntitySystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_EnvironmentEntitySystem"
+      },
+      {
+        "from": "03_08_EnvironmentEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "探索与旅行系统"
+      },
+      {
+        "from": "03_08_EnvironmentEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "地图与地点系统"
+      },
+      {
+        "from": "03_08_EnvironmentEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "休息与恢复系统"
+      }
+    ],
+    "execution_notes": [
+      "环境实体是地图节点的可交互规则层"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "layer": "03_内容实体层",
+  "source_work": "Elden Ring / 艾尔登法环",
+  "system_count": 12,
+  "routing_policy": "按输入术语先定位层级，再定位 canonical_system；保留 aliasTrace 与 source_terms。",
+  "systems": [
+    {
+      "skill_id": "AbilityEntitySystem",
+      "canonical_system": "能力实体系统",
+      "file": "systems/03_内容实体层/01_AbilityEntitySystem_能力实体系统.yaml"
+    },
+    {
+      "skill_id": "WeaponEntitySystem",
+      "canonical_system": "武器实体系统",
+      "file": "systems/03_内容实体层/02_WeaponEntitySystem_武器实体系统.yaml"
+    },
+    {
+      "skill_id": "ArmorDefenseEntitySystem",
+      "canonical_system": "护具与防御装备系统",
+      "file": "systems/03_内容实体层/03_ArmorDefenseEntitySystem_护具与防御装备系统.yaml"
+    },
+    {
+      "skill_id": "ItemConsumableEntitySystem",
+      "canonical_system": "道具与消耗品系统",
+      "file": "systems/03_内容实体层/04_ItemConsumableEntitySystem_道具与消耗品系统.yaml"
+    },
+    {
+      "skill_id": "SpellEntitySystem",
+      "canonical_system": "法术实体系统",
+      "file": "systems/03_内容实体层/05_SpellEntitySystem_法术实体系统.yaml"
+    },
+    {
+      "skill_id": "EnemyMonsterEntitySystem",
+      "canonical_system": "敌对单位与怪物系统",
+      "file": "systems/03_内容实体层/06_EnemyMonsterEntitySystem_敌对单位与怪物系统.yaml"
+    },
+    {
+      "skill_id": "NPCEntitySystem",
+      "canonical_system": "NPC 实体系统",
+      "file": "systems/03_内容实体层/07_NPCEntitySystem_NPC 实体系统.yaml"
+    },
+    {
+      "skill_id": "EnvironmentEntitySystem",
+      "canonical_system": "环境实体系统",
+      "file": "systems/03_内容实体层/08_EnvironmentEntitySystem_环境实体系统.yaml"
+    },
+    {
+      "skill_id": "TrapMechanismSystem",
+      "canonical_system": "陷阱与机关系统",
+      "file": "systems/03_内容实体层/09_TrapMechanismSystem_陷阱与机关系统.yaml"
+    },
+    {
+      "skill_id": "DiseaseToxinCurseSystem",
+      "canonical_system": "疾病、毒素与诅咒系统",
+      "file": "systems/03_内容实体层/10_DiseaseToxinCurseSystem_疾病、毒素与诅咒系统.yaml"
+    },
+    {
+      "skill_id": "EncounterEntitySystem",
+      "canonical_system": "遭遇实体系统",
+      "file": "systems/03_内容实体层/11_EncounterEntitySystem_遭遇实体系统.yaml"
+    },
+    {
+      "skill_id": "RewardLootSystem",
+      "canonical_system": "奖励与掉落系统",
+      "file": "systems/03_内容实体层/12_RewardLootSystem_奖励与掉落系统.yaml"
+    }
+  ]
+}

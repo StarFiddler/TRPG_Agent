@@ -1,0 +1,70 @@
+{
+  "graph_id": "MASTER_TRPG_ACGN_LAYER_ROUTER_GRAPHRAG__ELDEN_RING_INSTANCE",
+  "graph_name": "Elden Ring TRPG World Base 四层 GraphRAG 路由实例",
+  "source_repo_router": "RAG/00_MasterLayerGraphRAG_Router.js",
+  "purpose": "把玩家行动、Wiki条目、角色卡、实体对象或剧情状态定位到四层系统logic文件。",
+  "layers": [
+    {
+      "id": "L1_RULE_EXECUTION",
+      "name": "规则执行层",
+      "folder": "systems/01_规则执行层",
+      "question": "现在该如何判定？"
+    },
+    {
+      "id": "L2_CHARACTER_CONSTRUCTION",
+      "name": "角色构建层",
+      "folder": "systems/02_角色构建层",
+      "question": "角色为什么拥有某能力？"
+    },
+    {
+      "id": "L3_CONTENT_ENTITY",
+      "name": "内容实体层",
+      "folder": "systems/03_内容实体层",
+      "question": "某个对象的规则属性是什么？"
+    },
+    {
+      "id": "L4_NARRATIVE_RUNTIME",
+      "name": "叙事运行层",
+      "folder": "systems/04_叙事运行层",
+      "question": "当前故事发生了什么，以及规则如何作用于故事？"
+    }
+  ],
+  "cross_layer_edges": [
+    {
+      "from": "L4_NARRATIVE_RUNTIME",
+      "to": "L1_RULE_EXECUTION",
+      "relation": "SCENE_OR_CAMPAIGN_STATE_CONSTRAINS_RULE_EXECUTION"
+    },
+    {
+      "from": "L2_CHARACTER_CONSTRUCTION",
+      "to": "L1_RULE_EXECUTION",
+      "relation": "CHARACTER_BUILD_PROVIDES_RULE_INPUTS"
+    },
+    {
+      "from": "L3_CONTENT_ENTITY",
+      "to": "L1_RULE_EXECUTION",
+      "relation": "ENTITY_PROPERTIES_FEED_RULE_EXECUTION"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME",
+      "to": "L3_CONTENT_ENTITY",
+      "relation": "SCENE_CONTAINS_ENTITIES"
+    },
+    {
+      "from": "L4_NARRATIVE_RUNTIME",
+      "to": "L2_CHARACTER_CONSTRUCTION",
+      "relation": "CAMPAIGN_STATE_UPDATES_CHARACTER_SNAPSHOT"
+    },
+    {
+      "from": "L1_RULE_EXECUTION",
+      "to": "L4_NARRATIVE_RUNTIME",
+      "relation": "RULE_RESULT_WRITES_BACK_TO_CAMPAIGN_STATE"
+    }
+  ],
+  "routing_examples": {
+    "潜行经过关卡前废墟": "规则执行层/基础判定系统 + 内容实体层/遭遇实体系统 + 叙事运行层/场景系统",
+    "君王军大剑在哪里获得": "内容实体层/武器实体系统 + 奖励与掉落系统 + 地图与地点系统，需Wiki核对固定来源",
+    "梅琳娜是否信任队伍": "叙事运行层/NPC关系网络系统 + 社交互动系统 + 战役状态系统",
+    "小暗使用鲜血斩击": "角色构建层/装备构建系统 + 内容实体层/能力实体系统 + 规则执行层/能力执行与伤害系统"
+  }
+}

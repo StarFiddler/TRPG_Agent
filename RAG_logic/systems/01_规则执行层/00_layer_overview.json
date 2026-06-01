@@ -1,0 +1,68 @@
+{
+  "layer": "01_规则执行层",
+  "source_work": "Elden Ring / 艾尔登法环",
+  "system_count": 12,
+  "routing_policy": "按输入术语先定位层级，再定位 canonical_system；保留 aliasTrace 与 source_terms。",
+  "systems": [
+    {
+      "skill_id": "CheckLogic",
+      "canonical_system": "基础判定系统",
+      "file": "systems/01_规则执行层/01_CheckLogic_基础判定系统.yaml"
+    },
+    {
+      "skill_id": "ContestLogic",
+      "canonical_system": "对抗系统",
+      "file": "systems/01_规则执行层/02_ContestLogic_对抗系统.yaml"
+    },
+    {
+      "skill_id": "ActionEconomyLogic",
+      "canonical_system": "行动经济系统",
+      "file": "systems/01_规则执行层/03_ActionEconomyLogic_行动经济系统.yaml"
+    },
+    {
+      "skill_id": "AttackDefenseLogic",
+      "canonical_system": "攻击与防御系统",
+      "file": "systems/01_规则执行层/04_AttackDefenseLogic_攻击与防御系统.yaml"
+    },
+    {
+      "skill_id": "DamageHealingLogic",
+      "canonical_system": "伤害与治疗系统",
+      "file": "systems/01_规则执行层/05_DamageHealingLogic_伤害与治疗系统.yaml"
+    },
+    {
+      "skill_id": "StatusLogic",
+      "canonical_system": "状态系统",
+      "file": "systems/01_规则执行层/06_StatusLogic_状态系统.yaml"
+    },
+    {
+      "skill_id": "ResourceLogic",
+      "canonical_system": "资源消耗系统",
+      "file": "systems/01_规则执行层/07_ResourceLogic_资源消耗系统.yaml"
+    },
+    {
+      "skill_id": "RestRecoveryLogic",
+      "canonical_system": "休息与恢复系统",
+      "file": "systems/01_规则执行层/08_RestRecoveryLogic_休息与恢复系统.yaml"
+    },
+    {
+      "skill_id": "ExplorationTravelLogic",
+      "canonical_system": "探索与旅行系统",
+      "file": "systems/01_规则执行层/09_ExplorationTravelLogic_探索与旅行系统.yaml"
+    },
+    {
+      "skill_id": "SocialInteractionLogic",
+      "canonical_system": "社交互动系统",
+      "file": "systems/01_规则执行层/10_SocialInteractionLogic_社交互动系统.yaml"
+    },
+    {
+      "skill_id": "AbilityExecutionLogic",
+      "canonical_system": "魔法、技能与特殊能力执行系统",
+      "file": "systems/01_规则执行层/11_AbilityExecutionLogic_魔法、技能与特殊能力执行系统.yaml"
+    },
+    {
+      "skill_id": "RulePriorityLogic",
+      "canonical_system": "规则优先级与例外系统",
+      "file": "systems/01_规则执行层/12_RulePriorityLogic_规则优先级与例外系统.yaml"
+    }
+  ]
+}

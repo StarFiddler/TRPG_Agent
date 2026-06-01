@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "04_叙事运行层",
+    "skill_id": "FactionSystem",
+    "skill_no": "05",
+    "canonical_system": "派系系统",
+    "repository_skill_file": "Skills/04_叙事运行层/Skill_05_派系系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "派系系统",
+    "source_terms": [
+      {
+        "term": "黄金律法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "卡利亚王室",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "魔法学院",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "红狮子军",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "火山官邸",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "鲜血王朝",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "圣树",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "癫火",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "古龙",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "角人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "派系",
+        "mapped_to": "派系系统",
+        "reason": "组织、信仰、敌我关系、资源与结局倾向"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "golden_order",
+        "object_name": "Golden Order",
+        "object_type": "logic_object",
+        "source_term": "Golden Order",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "carian_royal_family",
+        "object_name": "Carian Royal Family",
+        "object_type": "logic_object",
+        "source_term": "Carian Royal Family",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "raya_lucaria",
+        "object_name": "Raya Lucaria",
+        "object_type": "logic_object",
+        "source_term": "Raya Lucaria",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "redmanes",
+        "object_name": "Redmanes",
+        "object_type": "logic_object",
+        "source_term": "Redmanes",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "volcano_manor",
+        "object_name": "Volcano Manor",
+        "object_type": "logic_object",
+        "source_term": "Volcano Manor",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "mohgwyn_dynasty",
+        "object_name": "Mohgwyn Dynasty",
+        "object_type": "logic_object",
+        "source_term": "Mohgwyn Dynasty",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "haligtree",
+        "object_name": "Haligtree",
+        "object_type": "logic_object",
+        "source_term": "Haligtree",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "frenzied_flame",
+        "object_name": "Frenzied Flame",
+        "object_type": "logic_object",
+        "source_term": "Frenzied Flame",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "ancient_dragons",
+        "object_name": "Ancient Dragons",
+        "object_type": "logic_object",
+        "source_term": "Ancient Dragons",
+        "normalized_term": "派系系统"
+      },
+      {
+        "object_id": "hornsent",
+        "object_name": "Hornsent",
+        "object_type": "logic_object",
+        "source_term": "Hornsent",
+        "normalized_term": "派系系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "fields",
+        "value": "ideology, leaders, territory, allies, enemies, player_reputation, quest_hooks",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "relations",
+        "value": "hostile, neutral, transactional, oathbound, hidden",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "派系立场不可仅由一次社交检定完全改写",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "结局派系需与关键任务旗标绑定",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "世界观系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "NPC关系网络系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "冲突系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 派系系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "04_05_FactionSystem",
+        "node_type": "System",
+        "label": "派系系统"
+      },
+      {
+        "node_id": "SRC_FactionSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "04_05_FactionSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_FactionSystem"
+      },
+      {
+        "from": "04_05_FactionSystem",
+        "relation": "DEPENDS_ON",
+        "to": "世界观系统"
+      },
+      {
+        "from": "04_05_FactionSystem",
+        "relation": "DEPENDS_ON",
+        "to": "NPC关系网络系统"
+      },
+      {
+        "from": "04_05_FactionSystem",
+        "relation": "DEPENDS_ON",
+        "to": "冲突系统"
+      }
+    ],
+    "execution_notes": [
+      "派系图谱是世界政治和任务冲突的核心"
+    ]
+  }
+}

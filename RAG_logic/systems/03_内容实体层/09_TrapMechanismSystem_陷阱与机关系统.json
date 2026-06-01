@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "03_内容实体层",
+    "skill_id": "TrapMechanismSystem",
+    "skill_no": "09",
+    "canonical_system": "陷阱与机关系统",
+    "repository_skill_file": "Skills/03_内容实体层/Skill_09_陷阱与机关系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "陷阱与机关系统",
+    "source_terms": [
+      {
+        "term": "陷阱",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "机关",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "战车",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "弩炮",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "升降机",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "封印",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "石剑钥匙",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "隐藏墙",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "传送陷阱",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "陷阱与机关",
+        "mapped_to": "陷阱与机关系统",
+        "reason": "可被发现、触发、解除、利用或绕行的环境机制"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "trap_id",
+        "object_name": "trap_id",
+        "object_type": "logic_object",
+        "source_term": "trap_id",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "trigger",
+        "object_name": "trigger",
+        "object_type": "logic_object",
+        "source_term": "trigger",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "detection",
+        "object_name": "detection",
+        "object_type": "logic_object",
+        "source_term": "detection",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "disarm",
+        "object_name": "disarm",
+        "object_type": "logic_object",
+        "source_term": "disarm",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "damage_or_effect",
+        "object_name": "damage_or_effect",
+        "object_type": "logic_object",
+        "source_term": "damage_or_effect",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "reset",
+        "object_name": "reset",
+        "object_type": "logic_object",
+        "source_term": "reset",
+        "normalized_term": "陷阱与机关系统"
+      },
+      {
+        "object_id": "bypass",
+        "object_name": "bypass",
+        "object_type": "logic_object",
+        "source_term": "bypass",
+        "normalized_term": "陷阱与机关系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "mechanism_types",
+        "value": "pressure, projectile, chariot, seal, illusion, teleport, lift, puzzle",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "checks",
+        "value": "perception, dexterity, intelligence, item_key",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "某些封印只能由钥匙或剧情条件解除",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      },
+      {
+        "condition": "机关可成为敌我双方共享的环境威胁",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "基础判定系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "环境实体系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "道具与消耗品系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 陷阱与机关系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "03_09_TrapMechanismSystem",
+        "node_type": "System",
+        "label": "陷阱与机关系统"
+      },
+      {
+        "node_id": "SRC_TrapMechanismSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "03_09_TrapMechanismSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_TrapMechanismSystem"
+      },
+      {
+        "from": "03_09_TrapMechanismSystem",
+        "relation": "DEPENDS_ON",
+        "to": "基础判定系统"
+      },
+      {
+        "from": "03_09_TrapMechanismSystem",
+        "relation": "DEPENDS_ON",
+        "to": "环境实体系统"
+      },
+      {
+        "from": "03_09_TrapMechanismSystem",
+        "relation": "DEPENDS_ON",
+        "to": "道具与消耗品系统"
+      }
+    ],
+    "execution_notes": [
+      "机关结果要写回场景状态，防止重复触发错误"
+    ]
+  }
+}

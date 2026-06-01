@@ -1,0 +1,338 @@
+[
+  {
+    "id": "01_01_CheckLogic",
+    "type": "System",
+    "label": "基础判定系统",
+    "layer": "01_规则执行层",
+    "skill_id": "CheckLogic"
+  },
+  {
+    "id": "01_02_ContestLogic",
+    "type": "System",
+    "label": "对抗系统",
+    "layer": "01_规则执行层",
+    "skill_id": "ContestLogic"
+  },
+  {
+    "id": "01_03_ActionEconomyLogic",
+    "type": "System",
+    "label": "行动经济系统",
+    "layer": "01_规则执行层",
+    "skill_id": "ActionEconomyLogic"
+  },
+  {
+    "id": "01_04_AttackDefenseLogic",
+    "type": "System",
+    "label": "攻击与防御系统",
+    "layer": "01_规则执行层",
+    "skill_id": "AttackDefenseLogic"
+  },
+  {
+    "id": "01_05_DamageHealingLogic",
+    "type": "System",
+    "label": "伤害与治疗系统",
+    "layer": "01_规则执行层",
+    "skill_id": "DamageHealingLogic"
+  },
+  {
+    "id": "01_06_StatusLogic",
+    "type": "System",
+    "label": "状态系统",
+    "layer": "01_规则执行层",
+    "skill_id": "StatusLogic"
+  },
+  {
+    "id": "01_07_ResourceLogic",
+    "type": "System",
+    "label": "资源消耗系统",
+    "layer": "01_规则执行层",
+    "skill_id": "ResourceLogic"
+  },
+  {
+    "id": "01_08_RestRecoveryLogic",
+    "type": "System",
+    "label": "休息与恢复系统",
+    "layer": "01_规则执行层",
+    "skill_id": "RestRecoveryLogic"
+  },
+  {
+    "id": "01_09_ExplorationTravelLogic",
+    "type": "System",
+    "label": "探索与旅行系统",
+    "layer": "01_规则执行层",
+    "skill_id": "ExplorationTravelLogic"
+  },
+  {
+    "id": "01_10_SocialInteractionLogic",
+    "type": "System",
+    "label": "社交互动系统",
+    "layer": "01_规则执行层",
+    "skill_id": "SocialInteractionLogic"
+  },
+  {
+    "id": "01_11_AbilityExecutionLogic",
+    "type": "System",
+    "label": "魔法、技能与特殊能力执行系统",
+    "layer": "01_规则执行层",
+    "skill_id": "AbilityExecutionLogic"
+  },
+  {
+    "id": "01_12_RulePriorityLogic",
+    "type": "System",
+    "label": "规则优先级与例外系统",
+    "layer": "01_规则执行层",
+    "skill_id": "RulePriorityLogic"
+  },
+  {
+    "id": "02_01_AttributeSystem",
+    "type": "System",
+    "label": "基础属性系统",
+    "layer": "02_角色构建层",
+    "skill_id": "AttributeSystem"
+  },
+  {
+    "id": "02_02_SpeciesLineageSystem",
+    "type": "System",
+    "label": "种族、血统或物种系统",
+    "layer": "02_角色构建层",
+    "skill_id": "SpeciesLineageSystem"
+  },
+  {
+    "id": "02_03_ClassSystem",
+    "type": "System",
+    "label": "职业系统",
+    "layer": "02_角色构建层",
+    "skill_id": "ClassSystem"
+  },
+  {
+    "id": "02_04_SubclassSpecializationSystem",
+    "type": "System",
+    "label": "子职业、专精或流派系统",
+    "layer": "02_角色构建层",
+    "skill_id": "SubclassSpecializationSystem"
+  },
+  {
+    "id": "02_05_BackgroundSystem",
+    "type": "System",
+    "label": "背景系统",
+    "layer": "02_角色构建层",
+    "skill_id": "BackgroundSystem"
+  },
+  {
+    "id": "02_06_LevelGrowthSystem",
+    "type": "System",
+    "label": "等级成长系统",
+    "layer": "02_角色构建层",
+    "skill_id": "LevelGrowthSystem"
+  },
+  {
+    "id": "02_07_SkillProficiencySystem",
+    "type": "System",
+    "label": "技能与熟练系统",
+    "layer": "02_角色构建层",
+    "skill_id": "SkillProficiencySystem"
+  },
+  {
+    "id": "02_08_FeatTraitSystem",
+    "type": "System",
+    "label": "专长、天赋与特性系统",
+    "layer": "02_角色构建层",
+    "skill_id": "FeatTraitSystem"
+  },
+  {
+    "id": "02_09_EquipmentBuildSystem",
+    "type": "System",
+    "label": "装备构建系统",
+    "layer": "02_角色构建层",
+    "skill_id": "EquipmentBuildSystem"
+  },
+  {
+    "id": "02_10_SpellAbilityListSystem",
+    "type": "System",
+    "label": "法术与能力列表系统",
+    "layer": "02_角色构建层",
+    "skill_id": "SpellAbilityListSystem"
+  },
+  {
+    "id": "02_11_TacticalRoleSystem",
+    "type": "System",
+    "label": "角色定位与战术角色系统",
+    "layer": "02_角色构建层",
+    "skill_id": "TacticalRoleSystem"
+  },
+  {
+    "id": "02_12_CharacterSnapshotSystem",
+    "type": "System",
+    "label": "角色状态快照系统",
+    "layer": "02_角色构建层",
+    "skill_id": "CharacterSnapshotSystem"
+  },
+  {
+    "id": "03_01_AbilityEntitySystem",
+    "type": "System",
+    "label": "能力实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "AbilityEntitySystem"
+  },
+  {
+    "id": "03_02_WeaponEntitySystem",
+    "type": "System",
+    "label": "武器实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "WeaponEntitySystem"
+  },
+  {
+    "id": "03_03_ArmorDefenseEntitySystem",
+    "type": "System",
+    "label": "护具与防御装备系统",
+    "layer": "03_内容实体层",
+    "skill_id": "ArmorDefenseEntitySystem"
+  },
+  {
+    "id": "03_04_ItemConsumableEntitySystem",
+    "type": "System",
+    "label": "道具与消耗品系统",
+    "layer": "03_内容实体层",
+    "skill_id": "ItemConsumableEntitySystem"
+  },
+  {
+    "id": "03_05_SpellEntitySystem",
+    "type": "System",
+    "label": "法术实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "SpellEntitySystem"
+  },
+  {
+    "id": "03_06_EnemyMonsterEntitySystem",
+    "type": "System",
+    "label": "敌对单位与怪物系统",
+    "layer": "03_内容实体层",
+    "skill_id": "EnemyMonsterEntitySystem"
+  },
+  {
+    "id": "03_07_NPCEntitySystem",
+    "type": "System",
+    "label": "NPC 实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "NPCEntitySystem"
+  },
+  {
+    "id": "03_08_EnvironmentEntitySystem",
+    "type": "System",
+    "label": "环境实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "EnvironmentEntitySystem"
+  },
+  {
+    "id": "03_09_TrapMechanismSystem",
+    "type": "System",
+    "label": "陷阱与机关系统",
+    "layer": "03_内容实体层",
+    "skill_id": "TrapMechanismSystem"
+  },
+  {
+    "id": "03_10_DiseaseToxinCurseSystem",
+    "type": "System",
+    "label": "疾病、毒素与诅咒系统",
+    "layer": "03_内容实体层",
+    "skill_id": "DiseaseToxinCurseSystem"
+  },
+  {
+    "id": "03_11_EncounterEntitySystem",
+    "type": "System",
+    "label": "遭遇实体系统",
+    "layer": "03_内容实体层",
+    "skill_id": "EncounterEntitySystem"
+  },
+  {
+    "id": "03_12_RewardLootSystem",
+    "type": "System",
+    "label": "奖励与掉落系统",
+    "layer": "03_内容实体层",
+    "skill_id": "RewardLootSystem"
+  },
+  {
+    "id": "04_01_WorldviewSystem",
+    "type": "System",
+    "label": "世界观系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "WorldviewSystem"
+  },
+  {
+    "id": "04_02_MapLocationSystem",
+    "type": "System",
+    "label": "地图与地点系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "MapLocationSystem"
+  },
+  {
+    "id": "04_03_SceneSystem",
+    "type": "System",
+    "label": "场景系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "SceneSystem"
+  },
+  {
+    "id": "04_04_NPCRelationshipNetworkSystem",
+    "type": "System",
+    "label": "NPC 与关系网络系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "NPCRelationshipNetworkSystem"
+  },
+  {
+    "id": "04_05_FactionSystem",
+    "type": "System",
+    "label": "派系系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "FactionSystem"
+  },
+  {
+    "id": "04_06_QuestSystem",
+    "type": "System",
+    "label": "任务系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "QuestSystem"
+  },
+  {
+    "id": "04_07_ClueInformationSystem",
+    "type": "System",
+    "label": "线索与信息系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "ClueInformationSystem"
+  },
+  {
+    "id": "04_08_ConflictSystem",
+    "type": "System",
+    "label": "冲突系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "ConflictSystem"
+  },
+  {
+    "id": "04_09_EncounterNodeSystem",
+    "type": "System",
+    "label": "遭遇节点系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "EncounterNodeSystem"
+  },
+  {
+    "id": "04_10_CampaignStateSystem",
+    "type": "System",
+    "label": "战役状态系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "CampaignStateSystem"
+  },
+  {
+    "id": "04_11_TimeProgressionSystem",
+    "type": "System",
+    "label": "时间推进系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "TimeProgressionSystem"
+  },
+  {
+    "id": "04_12_GMAdjudicationHomebrewSystem",
+    "type": "System",
+    "label": "GM裁定与自制规则系统",
+    "layer": "04_叙事运行层",
+    "skill_id": "GMAdjudicationHomebrewSystem"
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "01_规则执行层",
+    "skill_id": "ResourceLogic",
+    "skill_no": "07",
+    "canonical_system": "资源消耗系统",
+    "repository_skill_file": "Skills/01_规则执行层/07_Skill_ResourceLogic_资源消耗系统生成_Skill.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "资源消耗系统",
+    "source_terms": [
+      {
+        "term": "HP",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "FP",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "精力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "卢恩",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "圣杯瓶",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "道具数量",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "负重",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "记忆格",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "召唤限制",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "资源消耗",
+        "mapped_to": "ResourceLogic",
+        "reason": "角色可消耗、可恢复、可上限增长的数值资产"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "resource_id",
+        "object_name": "resource_id",
+        "object_type": "logic_object",
+        "source_term": "resource_id",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "current",
+        "object_name": "current",
+        "object_type": "logic_object",
+        "source_term": "current",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "max",
+        "object_name": "max",
+        "object_type": "logic_object",
+        "source_term": "max",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "cost",
+        "object_name": "cost",
+        "object_type": "logic_object",
+        "source_term": "cost",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "recovery",
+        "object_name": "recovery",
+        "object_type": "logic_object",
+        "source_term": "recovery",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "loss_rule",
+        "object_name": "loss_rule",
+        "object_type": "logic_object",
+        "source_term": "loss_rule",
+        "normalized_term": "资源消耗系统"
+      },
+      {
+        "object_id": "cap_source",
+        "object_name": "cap_source",
+        "object_type": "logic_object",
+        "source_term": "cap_source",
+        "normalized_term": "资源消耗系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "primary_resources",
+        "value": "HP, FP, Stamina",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "meta_resources",
+        "value": "Runes, Flask Charges, Consumables, Equip Load, Memory Slots",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "recovery",
+        "value": "grace rest, flask, item, spell, time passage",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "loss",
+        "value": "death rune drop, item consume, stamina spend",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "精力是动作门槛而非纯生命资源",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      },
+      {
+        "condition": "卢恩同时作为经验与货币，需要记录用途分流",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "行动经济系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "等级成长系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "装备构建系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "奖励与掉落系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 资源消耗系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "01_07_ResourceLogic",
+        "node_type": "System",
+        "label": "资源消耗系统"
+      },
+      {
+        "node_id": "SRC_ResourceLogic",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "01_07_ResourceLogic",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_ResourceLogic"
+      },
+      {
+        "from": "01_07_ResourceLogic",
+        "relation": "DEPENDS_ON",
+        "to": "行动经济系统"
+      },
+      {
+        "from": "01_07_ResourceLogic",
+        "relation": "DEPENDS_ON",
+        "to": "等级成长系统"
+      },
+      {
+        "from": "01_07_ResourceLogic",
+        "relation": "DEPENDS_ON",
+        "to": "装备构建系统"
+      },
+      {
+        "from": "01_07_ResourceLogic",
+        "relation": "DEPENDS_ON",
+        "to": "奖励与掉落系统"
+      }
+    ],
+    "execution_notes": [
+      "资源变化必须写回角色状态快照"
+    ]
+  }
+}

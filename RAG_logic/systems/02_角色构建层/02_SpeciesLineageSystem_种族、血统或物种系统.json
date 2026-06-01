@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "02_角色构建层",
+    "skill_id": "SpeciesLineageSystem",
+    "skill_no": "02",
+    "canonical_system": "种族、血统或物种系统",
+    "repository_skill_file": "Skills/02_角色构建层/Skill_02_种族、血统或物种系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "种族、血统或物种系统",
+    "source_terms": [
+      {
+        "term": "褪色者",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "半神",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "神人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "黄金一族",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "白金之子",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "混种",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "恶兆",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "龙",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "祖灵",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "壶人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "稀人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "物种/血统",
+        "mapped_to": "种族、血统或物种系统",
+        "reason": "角色或NPC的生理、神性、诅咒与社会标签"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "tarnished",
+        "object_name": "Tarnished",
+        "object_type": "logic_object",
+        "source_term": "Tarnished",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "demigod",
+        "object_name": "Demigod",
+        "object_type": "logic_object",
+        "source_term": "Demigod",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "empyrean",
+        "object_name": "Empyrean",
+        "object_type": "logic_object",
+        "source_term": "Empyrean",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "albinauric",
+        "object_name": "Albinauric",
+        "object_type": "logic_object",
+        "source_term": "Albinauric",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "misbegotten",
+        "object_name": "Misbegotten",
+        "object_type": "logic_object",
+        "source_term": "Misbegotten",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "omen",
+        "object_name": "Omen",
+        "object_type": "logic_object",
+        "source_term": "Omen",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "dragon",
+        "object_name": "Dragon",
+        "object_type": "logic_object",
+        "source_term": "Dragon",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "living_jar",
+        "object_name": "Living Jar",
+        "object_type": "logic_object",
+        "source_term": "Living Jar",
+        "normalized_term": "种族、血统或物种系统"
+      },
+      {
+        "object_id": "numen",
+        "object_name": "Numen",
+        "object_type": "logic_object",
+        "source_term": "Numen",
+        "normalized_term": "种族、血统或物种系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "playable_default",
+        "value": "Tarnished",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "tags",
+        "value": "humanoid, divine, cursed, artificial, draconic, spirit",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "半神、神人与Boss血统通常作为NPC/Boss模板，不默认开放为玩家选项",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "世界观系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "职业系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "派系系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 种族、血统或物种系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "02_02_SpeciesLineageSystem",
+        "node_type": "System",
+        "label": "种族、血统或物种系统"
+      },
+      {
+        "node_id": "SRC_SpeciesLineageSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "02_02_SpeciesLineageSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_SpeciesLineageSystem"
+      },
+      {
+        "from": "02_02_SpeciesLineageSystem",
+        "relation": "DEPENDS_ON",
+        "to": "世界观系统"
+      },
+      {
+        "from": "02_02_SpeciesLineageSystem",
+        "relation": "DEPENDS_ON",
+        "to": "职业系统"
+      },
+      {
+        "from": "02_02_SpeciesLineageSystem",
+        "relation": "DEPENDS_ON",
+        "to": "派系系统"
+      }
+    ],
+    "execution_notes": [
+      "血统影响可用背景、社会反应、抗性和剧情约束"
+    ]
+  }
+}

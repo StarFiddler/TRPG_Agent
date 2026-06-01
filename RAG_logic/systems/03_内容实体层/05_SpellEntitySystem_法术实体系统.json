@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "03_内容实体层",
+    "skill_id": "SpellEntitySystem",
+    "skill_no": "05",
+    "canonical_system": "法术实体系统",
+    "repository_skill_file": "Skills/03_内容实体层/Skill_05_法术实体系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "法术实体系统",
+    "source_terms": [
+      {
+        "term": "辉石魔法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "卡利亚魔法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "重力魔法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "黄金律法祷告",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "龙祷告",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "黑焰",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "癫火",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "死亡魔法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "法术实体",
+        "mapped_to": "法术实体系统",
+        "reason": "以FP、记忆格、属性需求和施法工具为条件的能力实体"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "spell_id",
+        "object_name": "spell_id",
+        "object_type": "logic_object",
+        "source_term": "spell_id",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "school",
+        "object_name": "school",
+        "object_type": "logic_object",
+        "source_term": "school",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "type",
+        "object_name": "type",
+        "object_type": "logic_object",
+        "source_term": "type",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "requirements",
+        "object_name": "requirements",
+        "object_type": "logic_object",
+        "source_term": "requirements",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "fp_cost",
+        "object_name": "fp_cost",
+        "object_type": "logic_object",
+        "source_term": "fp_cost",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "slots",
+        "object_name": "slots",
+        "object_type": "logic_object",
+        "source_term": "slots",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "casting_tool",
+        "object_name": "casting_tool",
+        "object_type": "logic_object",
+        "source_term": "casting_tool",
+        "normalized_term": "法术实体系统"
+      },
+      {
+        "object_id": "effect",
+        "object_name": "effect",
+        "object_type": "logic_object",
+        "source_term": "effect",
+        "normalized_term": "法术实体系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "types",
+        "value": "sorcery/incantation",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "scaling",
+        "value": "staff or seal scaling + relevant attribute",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "delivery",
+        "value": "projectile, self_buff, area, summon_like, weapon_buff",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "法术获取来源需按卷轴、祷告书、NPC、Boss追忆或地点记录",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "施法工具不匹配时不可施放",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "能力实体系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "法术与能力列表系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "资源消耗系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 法术实体系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "03_05_SpellEntitySystem",
+        "node_type": "System",
+        "label": "法术实体系统"
+      },
+      {
+        "node_id": "SRC_SpellEntitySystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "03_05_SpellEntitySystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_SpellEntitySystem"
+      },
+      {
+        "from": "03_05_SpellEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "能力实体系统"
+      },
+      {
+        "from": "03_05_SpellEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "法术与能力列表系统"
+      },
+      {
+        "from": "03_05_SpellEntitySystem",
+        "relation": "DEPENDS_ON",
+        "to": "资源消耗系统"
+      }
+    ],
+    "execution_notes": [
+      "法术是内容实体，角色已记忆法术才进入运行态能力列表"
+    ]
+  }
+}

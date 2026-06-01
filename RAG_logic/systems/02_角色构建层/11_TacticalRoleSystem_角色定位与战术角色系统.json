@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "02_角色构建层",
+    "skill_id": "TacticalRoleSystem",
+    "skill_no": "11",
+    "canonical_system": "角色定位与战术角色系统",
+    "repository_skill_file": "Skills/02_角色构建层/Skill_11_角色定位与战术角色系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "角色定位与战术角色系统",
+    "source_terms": [
+      {
+        "term": "近战",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "远程",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "法师",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "坦克",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "辅助",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "召唤",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "异常流",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "机动",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "战术角色",
+        "mapped_to": "角色定位与战术角色系统",
+        "reason": "战斗与探索中的队伍功能定位"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "frontline",
+        "object_name": "frontline",
+        "object_type": "logic_object",
+        "source_term": "frontline",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "skirmisher",
+        "object_name": "skirmisher",
+        "object_type": "logic_object",
+        "source_term": "skirmisher",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "ranged_caster",
+        "object_name": "ranged_caster",
+        "object_type": "logic_object",
+        "source_term": "ranged_caster",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "support",
+        "object_name": "support",
+        "object_type": "logic_object",
+        "source_term": "support",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "controller",
+        "object_name": "controller",
+        "object_type": "logic_object",
+        "source_term": "controller",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "summoner",
+        "object_name": "summoner",
+        "object_type": "logic_object",
+        "source_term": "summoner",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "scout",
+        "object_name": "scout",
+        "object_type": "logic_object",
+        "source_term": "scout",
+        "normalized_term": "角色定位与战术角色系统"
+      },
+      {
+        "object_id": "tank",
+        "object_name": "tank",
+        "object_type": "logic_object",
+        "source_term": "tank",
+        "normalized_term": "角色定位与战术角色系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "role_inputs",
+        "value": "attributes, equipment, spells, resources, personality, party needs",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "role_output",
+        "value": "target priority, defensive posture, exploration duty",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "角色定位可随装备和属性变化，不应永久锁定",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "装备构建系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "法术与能力列表系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "角色状态快照系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 角色定位与战术角色系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "02_11_TacticalRoleSystem",
+        "node_type": "System",
+        "label": "角色定位与战术角色系统"
+      },
+      {
+        "node_id": "SRC_TacticalRoleSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "02_11_TacticalRoleSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_TacticalRoleSystem"
+      },
+      {
+        "from": "02_11_TacticalRoleSystem",
+        "relation": "DEPENDS_ON",
+        "to": "装备构建系统"
+      },
+      {
+        "from": "02_11_TacticalRoleSystem",
+        "relation": "DEPENDS_ON",
+        "to": "法术与能力列表系统"
+      },
+      {
+        "from": "02_11_TacticalRoleSystem",
+        "relation": "DEPENDS_ON",
+        "to": "角色状态快照系统"
+      }
+    ],
+    "execution_notes": [
+      "适合给AI/NPC同伴生成战术决策权重"
+    ]
+  }
+}

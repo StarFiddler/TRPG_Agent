@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "02_角色构建层",
+    "skill_id": "AttributeSystem",
+    "skill_no": "01",
+    "canonical_system": "基础属性系统",
+    "repository_skill_file": "Skills/02_角色构建层/Skill_01_基础属性系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "基础属性系统",
+    "source_terms": [
+      {
+        "term": "生命力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "集中力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "耐力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "力气",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "灵巧",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "智力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "信仰",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "感应",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "HP",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "FP",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "精力",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "Elden Ring 八项能力值",
+        "mapped_to": "基础属性系统",
+        "reason": "直接映射为TRPG角色基础属性"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "vigor",
+        "object_name": "Vigor",
+        "object_type": "logic_object",
+        "source_term": "Vigor",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "mind",
+        "object_name": "Mind",
+        "object_type": "logic_object",
+        "source_term": "Mind",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "endurance",
+        "object_name": "Endurance",
+        "object_type": "logic_object",
+        "source_term": "Endurance",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "strength",
+        "object_name": "Strength",
+        "object_type": "logic_object",
+        "source_term": "Strength",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "dexterity",
+        "object_name": "Dexterity",
+        "object_type": "logic_object",
+        "source_term": "Dexterity",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "intelligence",
+        "object_name": "Intelligence",
+        "object_type": "logic_object",
+        "source_term": "Intelligence",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "faith",
+        "object_name": "Faith",
+        "object_type": "logic_object",
+        "source_term": "Faith",
+        "normalized_term": "基础属性系统"
+      },
+      {
+        "object_id": "arcane",
+        "object_name": "Arcane",
+        "object_type": "logic_object",
+        "source_term": "Arcane",
+        "normalized_term": "基础属性系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "derived_resources",
+        "value": "HP from Vigor, FP from Mind, Stamina/Equip Load from Endurance",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "offense",
+        "value": "Strength/Dexterity/Intelligence/Faith/Arcane drive scaling and checks",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "原作无社交属性，社交由背景、派系、智力/信仰/感应组合判定",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "基础判定系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "资源消耗系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "等级成长系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 基础属性系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "02_01_AttributeSystem",
+        "node_type": "System",
+        "label": "基础属性系统"
+      },
+      {
+        "node_id": "SRC_AttributeSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "02_01_AttributeSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_AttributeSystem"
+      },
+      {
+        "from": "02_01_AttributeSystem",
+        "relation": "DEPENDS_ON",
+        "to": "基础判定系统"
+      },
+      {
+        "from": "02_01_AttributeSystem",
+        "relation": "DEPENDS_ON",
+        "to": "资源消耗系统"
+      },
+      {
+        "from": "02_01_AttributeSystem",
+        "relation": "DEPENDS_ON",
+        "to": "等级成长系统"
+      }
+    ],
+    "execution_notes": [
+      "保留原作属性名，同时建立TRPG功能标签"
+    ]
+  }
+}

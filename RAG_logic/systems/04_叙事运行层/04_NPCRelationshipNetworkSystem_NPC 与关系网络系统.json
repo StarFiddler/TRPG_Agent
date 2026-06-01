@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "04_叙事运行层",
+    "skill_id": "NPCRelationshipNetworkSystem",
+    "skill_no": "04",
+    "canonical_system": "NPC 与关系网络系统",
+    "repository_skill_file": "Skills/04_叙事运行层/Skill_04_NPC 与关系网络系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "NPC 与关系网络系统",
+    "source_terms": [
+      {
+        "term": "梅琳娜",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "菈妮",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "圆桌厅堂",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "百智爵士",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "双指",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "半神",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "商人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "任务线NPC",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "NPC关系网络",
+        "mapped_to": "NPC 与关系网络系统",
+        "reason": "NPC之间、NPC与派系/玩家之间的关系、任务与敌意图谱"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "npc_node",
+        "object_name": "npc_node",
+        "object_type": "logic_object",
+        "source_term": "npc_node",
+        "normalized_term": "NPC 与关系网络系统"
+      },
+      {
+        "object_id": "relationship_edge",
+        "object_name": "relationship_edge",
+        "object_type": "logic_object",
+        "source_term": "relationship_edge",
+        "normalized_term": "NPC 与关系网络系统"
+      },
+      {
+        "object_id": "quest_dependency",
+        "object_name": "quest_dependency",
+        "object_type": "logic_object",
+        "source_term": "quest_dependency",
+        "normalized_term": "NPC 与关系网络系统"
+      },
+      {
+        "object_id": "dialogue_flag",
+        "object_name": "dialogue_flag",
+        "object_type": "logic_object",
+        "source_term": "dialogue_flag",
+        "normalized_term": "NPC 与关系网络系统"
+      },
+      {
+        "object_id": "hostility",
+        "object_name": "hostility",
+        "object_type": "logic_object",
+        "source_term": "hostility",
+        "normalized_term": "NPC 与关系网络系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "edge_types",
+        "value": "ally, mentor, rival, servant, betrayer, family, faction_member, merchant, hostile",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "state",
+        "value": "unknown, met, trusted, betrayed, dead, completed",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "NPC关系常受任务阶段和玩家行为不可逆影响",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "同一NPC可在不同阶段变更地点、商店和敌意",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "NPC 实体系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "任务系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "派系系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to NPC 与关系网络系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "04_04_NPCRelationshipNetworkSystem",
+        "node_type": "System",
+        "label": "NPC 与关系网络系统"
+      },
+      {
+        "node_id": "SRC_NPCRelationshipNetworkSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "04_04_NPCRelationshipNetworkSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_NPCRelationshipNetworkSystem"
+      },
+      {
+        "from": "04_04_NPCRelationshipNetworkSystem",
+        "relation": "DEPENDS_ON",
+        "to": "NPC_实体系统"
+      },
+      {
+        "from": "04_04_NPCRelationshipNetworkSystem",
+        "relation": "DEPENDS_ON",
+        "to": "任务系统"
+      },
+      {
+        "from": "04_04_NPCRelationshipNetworkSystem",
+        "relation": "DEPENDS_ON",
+        "to": "派系系统"
+      }
+    ],
+    "execution_notes": [
+      "关系网络用于避免任务线和对话状态断裂"
+    ]
+  }
+}

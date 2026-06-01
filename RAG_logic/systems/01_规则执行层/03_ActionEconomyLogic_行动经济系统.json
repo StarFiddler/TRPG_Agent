@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "01_规则执行层",
+    "skill_id": "ActionEconomyLogic",
+    "skill_no": "03",
+    "canonical_system": "行动经济系统",
+    "repository_skill_file": "Skills/01_规则执行层/03_Skill_ActionEconomyLogic_行动经济系统生成_Skill.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "行动经济系统",
+    "source_terms": [
+      {
+        "term": "轻攻击",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "重攻击",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "战技",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "施法",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "翻滚",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "防御",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "冲刺",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "骑乘",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "召唤",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "使用道具",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "行动经济",
+        "mapped_to": "ActionEconomyLogic",
+        "reason": "将实时动作拆解为回合内可消耗的行动槽与反应窗口"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "round",
+        "object_name": "round",
+        "object_type": "logic_object",
+        "source_term": "round",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "turn",
+        "object_name": "turn",
+        "object_type": "logic_object",
+        "source_term": "turn",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "major_action",
+        "object_name": "major_action",
+        "object_type": "logic_object",
+        "source_term": "major_action",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "minor_action",
+        "object_name": "minor_action",
+        "object_type": "logic_object",
+        "source_term": "minor_action",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "move_action",
+        "object_name": "move_action",
+        "object_type": "logic_object",
+        "source_term": "move_action",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "reaction",
+        "object_name": "reaction",
+        "object_type": "logic_object",
+        "source_term": "reaction",
+        "normalized_term": "行动经济系统"
+      },
+      {
+        "object_id": "stamina_gate",
+        "object_name": "stamina_gate",
+        "object_type": "logic_object",
+        "source_term": "stamina_gate",
+        "normalized_term": "行动经济系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "round_model",
+        "value": "1轮约6秒",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "action_slots",
+        "value": "主要行动1、移动行动1、次要行动1、反应1",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "stamina_gate",
+        "value": "高强度动作需要耐力许可；耐力不足时降级或附带风险",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "翻滚、防御、格挡反击等动作必须与耐力绑定",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      },
+      {
+        "condition": "召唤骨灰、骑乘灵马、使用大型法术可占用主要行动或整轮",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "资源消耗系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "攻击与防御系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "魔法、技能与特殊能力执行系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 行动经济系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "01_03_ActionEconomyLogic",
+        "node_type": "System",
+        "label": "行动经济系统"
+      },
+      {
+        "node_id": "SRC_ActionEconomyLogic",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "01_03_ActionEconomyLogic",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_ActionEconomyLogic"
+      },
+      {
+        "from": "01_03_ActionEconomyLogic",
+        "relation": "DEPENDS_ON",
+        "to": "资源消耗系统"
+      },
+      {
+        "from": "01_03_ActionEconomyLogic",
+        "relation": "DEPENDS_ON",
+        "to": "攻击与防御系统"
+      },
+      {
+        "from": "01_03_ActionEconomyLogic",
+        "relation": "DEPENDS_ON",
+        "to": "魔法_技能与特殊能力执行系统"
+      }
+    ],
+    "execution_notes": [
+      "用于把 Soulslike 实时战斗转换为TRPG回合秩序"
+    ]
+  }
+}

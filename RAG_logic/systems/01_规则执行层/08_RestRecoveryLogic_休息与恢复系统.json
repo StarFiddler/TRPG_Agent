@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "01_规则执行层",
+    "skill_id": "RestRecoveryLogic",
+    "skill_no": "08",
+    "canonical_system": "休息与恢复系统",
+    "repository_skill_file": "Skills/01_规则执行层/08_Skill_RestRecoveryLogic_休息与恢复系统生成_Skill.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "休息与恢复系统",
+    "source_terms": [
+      {
+        "term": "赐福",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "篝火",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "休息",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "升级",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "补瓶",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "敌人刷新",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "传送",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "记忆法术",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "整理圣杯瓶",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "休息与恢复",
+        "mapped_to": "RestRecoveryLogic",
+        "reason": "在安全点进行恢复、推进、重置与角色维护"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "rest_site",
+        "object_name": "rest_site",
+        "object_type": "logic_object",
+        "source_term": "rest_site",
+        "normalized_term": "休息与恢复系统"
+      },
+      {
+        "object_id": "recovery_package",
+        "object_name": "recovery_package",
+        "object_type": "logic_object",
+        "source_term": "recovery_package",
+        "normalized_term": "休息与恢复系统"
+      },
+      {
+        "object_id": "enemy_reset",
+        "object_name": "enemy_reset",
+        "object_type": "logic_object",
+        "source_term": "enemy_reset",
+        "normalized_term": "休息与恢复系统"
+      },
+      {
+        "object_id": "world_state_update",
+        "object_name": "world_state_update",
+        "object_type": "logic_object",
+        "source_term": "world_state_update",
+        "normalized_term": "休息与恢复系统"
+      },
+      {
+        "object_id": "safe_zone",
+        "object_name": "safe_zone",
+        "object_type": "logic_object",
+        "source_term": "safe_zone",
+        "normalized_term": "休息与恢复系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "rest_site",
+        "value": "Site of Grace / 赐福，可在本项目中兼容称为篝火",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "rest_effects",
+        "value": "restore HP/FP/flasks, reset most non-boss enemies, allow level up/spell memory/flask allocation",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "travel",
+        "value": "unlocked grace fast travel unless scene locks",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "Boss、唯一NPC、固定宝箱与剧情状态不因休息重置",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "野外临时休息需GM判定遭遇风险",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "资源消耗系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "战役状态系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "时间推进系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 休息与恢复系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "01_08_RestRecoveryLogic",
+        "node_type": "System",
+        "label": "休息与恢复系统"
+      },
+      {
+        "node_id": "SRC_RestRecoveryLogic",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "01_08_RestRecoveryLogic",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_RestRecoveryLogic"
+      },
+      {
+        "from": "01_08_RestRecoveryLogic",
+        "relation": "DEPENDS_ON",
+        "to": "资源消耗系统"
+      },
+      {
+        "from": "01_08_RestRecoveryLogic",
+        "relation": "DEPENDS_ON",
+        "to": "战役状态系统"
+      },
+      {
+        "from": "01_08_RestRecoveryLogic",
+        "relation": "DEPENDS_ON",
+        "to": "时间推进系统"
+      }
+    ],
+    "execution_notes": [
+      "所有赐福点应成为地图图谱中的安全区节点"
+    ]
+  }
+}

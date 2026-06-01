@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "04_叙事运行层",
+    "skill_id": "QuestSystem",
+    "skill_no": "06",
+    "canonical_system": "任务系统",
+    "repository_skill_file": "Skills/04_叙事运行层/Skill_06_任务系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "任务系统",
+    "source_terms": [
+      {
+        "term": "任务线",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "对话阶段",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "交付物",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "地点推进",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "Boss击败",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "结局条件",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "不可逆选择",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "任务",
+        "mapped_to": "任务系统",
+        "reason": "NPC/派系/主线目标的阶段机与奖励逻辑"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "quest_id",
+        "object_name": "quest_id",
+        "object_type": "logic_object",
+        "source_term": "quest_id",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "stage",
+        "object_name": "stage",
+        "object_type": "logic_object",
+        "source_term": "stage",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "trigger",
+        "object_name": "trigger",
+        "object_type": "logic_object",
+        "source_term": "trigger",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "objective",
+        "object_name": "objective",
+        "object_type": "logic_object",
+        "source_term": "objective",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "failure_condition",
+        "object_name": "failure_condition",
+        "object_type": "logic_object",
+        "source_term": "failure_condition",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "reward",
+        "object_name": "reward",
+        "object_type": "logic_object",
+        "source_term": "reward",
+        "normalized_term": "任务系统"
+      },
+      {
+        "object_id": "world_flag",
+        "object_name": "world_flag",
+        "object_type": "logic_object",
+        "source_term": "world_flag",
+        "normalized_term": "任务系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "stage_model",
+        "value": "not_started -> discovered -> active -> branched -> completed/failed/locked",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "triggers",
+        "value": "dialogue, item, boss_defeat, location_entered, rest, time, choice",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "原作任务线常隐含触发点，必须记录待核对来源",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      },
+      {
+        "condition": "不得将猜测分支写成确定结果",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "NPC关系网络系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "线索与信息系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "奖励与掉落系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 任务系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "04_06_QuestSystem",
+        "node_type": "System",
+        "label": "任务系统"
+      },
+      {
+        "node_id": "SRC_QuestSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "04_06_QuestSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_QuestSystem"
+      },
+      {
+        "from": "04_06_QuestSystem",
+        "relation": "DEPENDS_ON",
+        "to": "NPC关系网络系统"
+      },
+      {
+        "from": "04_06_QuestSystem",
+        "relation": "DEPENDS_ON",
+        "to": "线索与信息系统"
+      },
+      {
+        "from": "04_06_QuestSystem",
+        "relation": "DEPENDS_ON",
+        "to": "奖励与掉落系统"
+      }
+    ],
+    "execution_notes": [
+      "任务系统要明确可逆、不可逆和待核对状态"
+    ]
+  }
+}

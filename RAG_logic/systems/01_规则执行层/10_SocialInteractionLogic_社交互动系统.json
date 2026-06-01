@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "01_规则执行层",
+    "skill_id": "SocialInteractionLogic",
+    "skill_no": "10",
+    "canonical_system": "社交互动系统",
+    "repository_skill_file": "Skills/01_规则执行层/10_Skill_SocialInteractionLogic_社交互动系统生成_Skill.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "社交互动系统",
+    "source_terms": [
+      {
+        "term": "NPC对话",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "任务线",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "商人",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "导师",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "誓约",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "背叛",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "敌对",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "结局选择",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "社交互动",
+        "mapped_to": "SocialInteractionLogic",
+        "reason": "对话、态度、交易、任务阶段与关系变化"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "npc",
+        "object_name": "npc",
+        "object_type": "logic_object",
+        "source_term": "npc",
+        "normalized_term": "社交互动系统"
+      },
+      {
+        "object_id": "attitude",
+        "object_name": "attitude",
+        "object_type": "logic_object",
+        "source_term": "attitude",
+        "normalized_term": "社交互动系统"
+      },
+      {
+        "object_id": "dialogue_state",
+        "object_name": "dialogue_state",
+        "object_type": "logic_object",
+        "source_term": "dialogue_state",
+        "normalized_term": "社交互动系统"
+      },
+      {
+        "object_id": "quest_flag",
+        "object_name": "quest_flag",
+        "object_type": "logic_object",
+        "source_term": "quest_flag",
+        "normalized_term": "社交互动系统"
+      },
+      {
+        "object_id": "trade_access",
+        "object_name": "trade_access",
+        "object_type": "logic_object",
+        "source_term": "trade_access",
+        "normalized_term": "社交互动系统"
+      },
+      {
+        "object_id": "faction_relation",
+        "object_name": "faction_relation",
+        "object_type": "logic_object",
+        "source_term": "faction_relation",
+        "normalized_term": "社交互动系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "check_sources",
+        "value": "Faith/Intelligence/Arcane + background + faction relation + evidence",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "attitudes",
+        "value": "hostile, wary, neutral, helpful, bound, betrayed",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "outcomes",
+        "value": "dialogue unlock, shop unlock, quest progress, hostility, reward",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "原作NPC任务常有不可逆阶段，GM不可随意重置",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "社交成功不能直接改写神话级敌对立场",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "NPC 实体系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "NPC 与关系网络系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "任务系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "派系系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 社交互动系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "01_10_SocialInteractionLogic",
+        "node_type": "System",
+        "label": "社交互动系统"
+      },
+      {
+        "node_id": "SRC_SocialInteractionLogic",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "01_10_SocialInteractionLogic",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_SocialInteractionLogic"
+      },
+      {
+        "from": "01_10_SocialInteractionLogic",
+        "relation": "DEPENDS_ON",
+        "to": "NPC_实体系统"
+      },
+      {
+        "from": "01_10_SocialInteractionLogic",
+        "relation": "DEPENDS_ON",
+        "to": "NPC_与关系网络系统"
+      },
+      {
+        "from": "01_10_SocialInteractionLogic",
+        "relation": "DEPENDS_ON",
+        "to": "任务系统"
+      },
+      {
+        "from": "01_10_SocialInteractionLogic",
+        "relation": "DEPENDS_ON",
+        "to": "派系系统"
+      }
+    ],
+    "execution_notes": [
+      "对话应记录已知信息、承诺、敌意与任务旗标"
+    ]
+  }
+}

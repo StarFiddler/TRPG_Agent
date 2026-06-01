@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "01_规则执行层",
+    "skill_id": "ContestLogic",
+    "skill_no": "02",
+    "canonical_system": "对抗系统",
+    "repository_skill_file": "Skills/01_规则执行层/02_Skill_ContestLogic_对抗系统生成_Skill.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "对抗系统",
+    "source_terms": [
+      {
+        "term": "架势压制",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "隐匿与发现",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "推拉",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "抓取",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "反制",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "抗性积累",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "NPC态度拉扯",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "对抗判定",
+        "mapped_to": "ContestLogic",
+        "reason": "双方或多方以属性、状态、装备与环境进行相对胜负比较"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "initiator",
+        "object_name": "initiator",
+        "object_type": "logic_object",
+        "source_term": "initiator",
+        "normalized_term": "对抗系统"
+      },
+      {
+        "object_id": "responder",
+        "object_name": "responder",
+        "object_type": "logic_object",
+        "source_term": "responder",
+        "normalized_term": "对抗系统"
+      },
+      {
+        "object_id": "contest_domain",
+        "object_name": "contest_domain",
+        "object_type": "logic_object",
+        "source_term": "contest_domain",
+        "normalized_term": "对抗系统"
+      },
+      {
+        "object_id": "opposed_rolls",
+        "object_name": "opposed_rolls",
+        "object_type": "logic_object",
+        "source_term": "opposed_rolls",
+        "normalized_term": "对抗系统"
+      },
+      {
+        "object_id": "margin",
+        "object_name": "margin",
+        "object_type": "logic_object",
+        "source_term": "margin",
+        "normalized_term": "对抗系统"
+      },
+      {
+        "object_id": "winner_effect",
+        "object_name": "winner_effect",
+        "object_type": "logic_object",
+        "source_term": "winner_effect",
+        "normalized_term": "对抗系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "formula",
+        "value": "双方各自 d100 + relevant_modifiers，比较总值",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "tie_rule",
+        "value": "守势方或环境稳定方优先；剧情关键时触发僵持",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "margin_effect",
+        "value": "差值越高，位移、压制、发现、谈判让步越明显",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "大型Boss与超规格实体可获得体型/神性/领域修正",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      },
+      {
+        "condition": "不可把纯伤害互换误判为对抗，除非双方目标互相排斥",
+        "effect": "limit_or_override_logic",
+        "priority": "special"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "基础判定系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "状态系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "敌对单位与怪物系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "NPC 与关系网络系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 对抗系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "01_02_ContestLogic",
+        "node_type": "System",
+        "label": "对抗系统"
+      },
+      {
+        "node_id": "SRC_ContestLogic",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "01_02_ContestLogic",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_ContestLogic"
+      },
+      {
+        "from": "01_02_ContestLogic",
+        "relation": "DEPENDS_ON",
+        "to": "基础判定系统"
+      },
+      {
+        "from": "01_02_ContestLogic",
+        "relation": "DEPENDS_ON",
+        "to": "状态系统"
+      },
+      {
+        "from": "01_02_ContestLogic",
+        "relation": "DEPENDS_ON",
+        "to": "敌对单位与怪物系统"
+      },
+      {
+        "from": "01_02_ContestLogic",
+        "relation": "DEPENDS_ON",
+        "to": "NPC_与关系网络系统"
+      }
+    ],
+    "execution_notes": [
+      "适合处理潜行、追逐、压制、精神污染抵抗、派系谈判"
+    ]
+  }
+}

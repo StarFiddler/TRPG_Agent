@@ -1,0 +1,68 @@
+{
+  "layer": "02_角色构建层",
+  "source_work": "Elden Ring / 艾尔登法环",
+  "system_count": 12,
+  "routing_policy": "按输入术语先定位层级，再定位 canonical_system；保留 aliasTrace 与 source_terms。",
+  "systems": [
+    {
+      "skill_id": "AttributeSystem",
+      "canonical_system": "基础属性系统",
+      "file": "systems/02_角色构建层/01_AttributeSystem_基础属性系统.yaml"
+    },
+    {
+      "skill_id": "SpeciesLineageSystem",
+      "canonical_system": "种族、血统或物种系统",
+      "file": "systems/02_角色构建层/02_SpeciesLineageSystem_种族、血统或物种系统.yaml"
+    },
+    {
+      "skill_id": "ClassSystem",
+      "canonical_system": "职业系统",
+      "file": "systems/02_角色构建层/03_ClassSystem_职业系统.yaml"
+    },
+    {
+      "skill_id": "SubclassSpecializationSystem",
+      "canonical_system": "子职业、专精或流派系统",
+      "file": "systems/02_角色构建层/04_SubclassSpecializationSystem_子职业、专精或流派系统.yaml"
+    },
+    {
+      "skill_id": "BackgroundSystem",
+      "canonical_system": "背景系统",
+      "file": "systems/02_角色构建层/05_BackgroundSystem_背景系统.yaml"
+    },
+    {
+      "skill_id": "LevelGrowthSystem",
+      "canonical_system": "等级成长系统",
+      "file": "systems/02_角色构建层/06_LevelGrowthSystem_等级成长系统.yaml"
+    },
+    {
+      "skill_id": "SkillProficiencySystem",
+      "canonical_system": "技能与熟练系统",
+      "file": "systems/02_角色构建层/07_SkillProficiencySystem_技能与熟练系统.yaml"
+    },
+    {
+      "skill_id": "FeatTraitSystem",
+      "canonical_system": "专长、天赋与特性系统",
+      "file": "systems/02_角色构建层/08_FeatTraitSystem_专长、天赋与特性系统.yaml"
+    },
+    {
+      "skill_id": "EquipmentBuildSystem",
+      "canonical_system": "装备构建系统",
+      "file": "systems/02_角色构建层/09_EquipmentBuildSystem_装备构建系统.yaml"
+    },
+    {
+      "skill_id": "SpellAbilityListSystem",
+      "canonical_system": "法术与能力列表系统",
+      "file": "systems/02_角色构建层/10_SpellAbilityListSystem_法术与能力列表系统.yaml"
+    },
+    {
+      "skill_id": "TacticalRoleSystem",
+      "canonical_system": "角色定位与战术角色系统",
+      "file": "systems/02_角色构建层/11_TacticalRoleSystem_角色定位与战术角色系统.yaml"
+    },
+    {
+      "skill_id": "CharacterSnapshotSystem",
+      "canonical_system": "角色状态快照系统",
+      "file": "systems/02_角色构建层/12_CharacterSnapshotSystem_角色状态快照系统.yaml"
+    }
+  ]
+}

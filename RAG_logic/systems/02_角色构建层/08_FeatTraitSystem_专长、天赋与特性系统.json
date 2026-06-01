@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "world_base_id": "WORLD_BASE_ELDEN_RING_TRPG",
+    "source_work": "Elden Ring / 艾尔登法环",
+    "source_scope": "艾尔登法环及该游戏相关的所有wiki等参考链接",
+    "layer": "02_角色构建层",
+    "skill_id": "FeatTraitSystem",
+    "skill_no": "08",
+    "canonical_system": "专长、天赋与特性系统",
+    "repository_skill_file": "Skills/02_角色构建层/Skill_08_专长、天赋与特性系统.md",
+    "output_type": "system_logic",
+    "canon_policy": "保留原作术语；TRPG化机制明确标记为adapter/homebrew；固定掉落与地点需Wiki核对"
+  },
+  "system_logic": {
+    "canonical_system": "专长、天赋与特性系统",
+    "source_terms": [
+      {
+        "term": "护符",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "大卢恩",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "卢恩弯弧",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "追忆",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "烙印",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "赐福",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "癫火印记",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      },
+      {
+        "term": "龙化倾向",
+        "source_context": "Elden Ring canon/wiki terminology or TRPG adapter terminology",
+        "confidence": 0.85
+      }
+    ],
+    "normalized_terms": [
+      {
+        "term": "专长/天赋/特性",
+        "mapped_to": "专长、天赋与特性系统",
+        "reason": "长期或条件性改变角色规则表现的标签"
+      }
+    ],
+    "core_objects": [
+      {
+        "object_id": "talisman_trait",
+        "object_name": "talisman_trait",
+        "object_type": "logic_object",
+        "source_term": "talisman_trait",
+        "normalized_term": "专长、天赋与特性系统"
+      },
+      {
+        "object_id": "great_rune_trait",
+        "object_name": "great_rune_trait",
+        "object_type": "logic_object",
+        "source_term": "great_rune_trait",
+        "normalized_term": "专长、天赋与特性系统"
+      },
+      {
+        "object_id": "curse_trait",
+        "object_name": "curse_trait",
+        "object_type": "logic_object",
+        "source_term": "curse_trait",
+        "normalized_term": "专长、天赋与特性系统"
+      },
+      {
+        "object_id": "quest_mark",
+        "object_name": "quest_mark",
+        "object_type": "logic_object",
+        "source_term": "quest_mark",
+        "normalized_term": "专长、天赋与特性系统"
+      },
+      {
+        "object_id": "remembrance_option",
+        "object_name": "remembrance_option",
+        "object_type": "logic_object",
+        "source_term": "remembrance_option",
+        "normalized_term": "专长、天赋与特性系统"
+      }
+    ],
+    "attributes": [
+      {
+        "key": "trait_sources",
+        "value": "talisman, great rune, quest consequence, faction blessing, curse",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      },
+      {
+        "key": "duration",
+        "value": "permanent, while_equipped, until_cleansed, arc_activated",
+        "source": "generated_from_skill_and_elden_ring_reference_scope"
+      }
+    ],
+    "constraints": [
+      {
+        "condition": "同类强特性须限制叠加；癫火等特性可能影响结局",
+        "effect": "limit_or_override_logic",
+        "priority": "general"
+      }
+    ],
+    "dependencies": [
+      {
+        "depends_on_system": "装备构建系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "战役状态系统",
+        "relation": "requires_or_feeds"
+      },
+      {
+        "depends_on_system": "规则优先级与例外系统",
+        "relation": "requires_or_feeds"
+      }
+    ],
+    "state_changes": [
+      {
+        "trigger": "system_resolution",
+        "before": "unstructured Elden Ring source term",
+        "after": "mapped to 专长、天赋与特性系统 logic"
+      }
+    ],
+    "graph_nodes": [
+      {
+        "node_id": "02_08_FeatTraitSystem",
+        "node_type": "System",
+        "label": "专长、天赋与特性系统"
+      },
+      {
+        "node_id": "SRC_FeatTraitSystem",
+        "node_type": "SourceScope",
+        "label": "Elden Ring wiki/canon reference scope"
+      }
+    ],
+    "graph_edges": [
+      {
+        "from": "02_08_FeatTraitSystem",
+        "relation": "DERIVED_FROM",
+        "to": "SRC_FeatTraitSystem"
+      },
+      {
+        "from": "02_08_FeatTraitSystem",
+        "relation": "DEPENDS_ON",
+        "to": "装备构建系统"
+      },
+      {
+        "from": "02_08_FeatTraitSystem",
+        "relation": "DEPENDS_ON",
+        "to": "战役状态系统"
+      },
+      {
+        "from": "02_08_FeatTraitSystem",
+        "relation": "DEPENDS_ON",
+        "to": "规则优先级与例外系统"
+      }
+    ],
+    "execution_notes": [
+      "将护符与剧情烙印统一抽象为可查询特性"
+    ]
+  }
+}
